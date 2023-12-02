@@ -1,0 +1,256 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "admin@admin.com",
+      "password": "admin",
+      "name": "ADMIN",
+      "surname": "Admin"
+    },
+    {
+      "id": 2,
+      "login": "user@user.com",
+      "password": "user",
+      "name": "USER",
+      "surname": "User"
+    },
+    {
+      "id": 3,
+      "login": "m.dupont@gmail.com",
+      "password": "mdupont",
+      "name": "DUPONT",
+      "surname": "Marc"
+    }
+  ],
+  "station": [
+    {
+      "id": 1,
+      "city": "Paris",
+      "country": "FR",
+      "stationName": "Paris CDG T2",
+      "schedules": [
+        {
+          "monday": "8AM - 10 PM",
+          "tuesday": "8AM - 10 PM",
+          "wednesday": "8AM - 10 PM",
+          "thursday": "8AM - 10 PM",
+          "friday": "8AM - 10 PM",
+          "saturday": "8AM - 10 PM",
+          "sunday": "8AM - 10 PM"
+        }
+      ]
+    }
+  ],
+  "vehicleType":[
+    {
+      "id": 1,
+      "type": "utilitary",
+      "label": "Utilitaires"
+    },
+    {
+      "id": 2,
+      "type": "cars",
+      "label": "Voitures"
+    }
+  ],
+  "carType":[
+    {
+      "id": 1,
+      "label": "Véhicule économique"
+    },
+    {
+      "id": 2,
+      "label": "Véhicule compact"
+    },
+    {
+      "id": 3,
+      "label": "Véhicule SUV Compact"
+    }
+  ],
+  "vehicle":[
+    {
+      "id": 1,
+      "type": 2,
+      "carType": 1,
+      "long_name": "Audi A1",
+      "brand": "Audi",
+      "model": "A1",
+      "year_model": "2023",
+      "power": "130ch",
+      "characteristics": [
+        {
+          "seating_places": 5,
+          "doors": 5,
+          "gearbox": "A",
+          "bags": 3
+        }
+      ],
+      "picture": "assets/vehicule/1/",
+      "price": 42.95
+    },
+    {
+      "id": 2,
+      "type": 2,
+      "carType": 2,
+      "long_name": "VW GOLF",
+      "brand": "VOLKSWAGEN",
+      "model": "TAIGO",
+      "year_model": "2023",
+      "power": "130ch",
+      "characteristics": [
+        {
+          "seating_places": 5,
+          "doors": 5,
+          "gearbox": "A",
+          "bags": 3
+        }
+      ],
+      "picture": "assets/vehicule/2/",
+      "price": 51.95
+    },
+    {
+      "id": 3,
+      "type": 2,
+      "carType": 3,
+      "long_name": "VW TAIGO",
+      "brand": "VOLKSWAGEN",
+      "model": "TAIGO",
+      "year_model": "2023",
+      "power": "130ch",
+      "characteristics": [
+        {
+          "seating_places": 5,
+          "doors": 5,
+          "gearbox": "A",
+          "bags": 3
+        }
+      ],
+      "picture": "assets/vehicule/3/",
+      "price": 58.95
+    }
+  ],
+  "assurance":[
+    {
+      "id": 1,
+      "label": "Basic",
+      "price": 0,
+      "caution": 1200,
+      "protections": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "label": "Médium",
+      "price": 20,
+      "caution": 520,
+      "protections": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 3,
+      "label": "Prenium",
+      "price": 24,
+      "caution": 0,
+      "protections": [1, 2, 3, 4, 5, 6]
+    }
+  ],
+  "protection": [
+    {
+      "id": 1,
+      "label": "Protection en cas de collision"
+    },
+    {
+      "id": 2,
+      "label": "Protection en cas de vol"
+    },
+    {
+      "id": 3,
+      "label": "Protection en cas de vandalisme"
+    },
+    {
+      "id": 4,
+      "label": "Protection contre les dégâts au pare-brise, vitres, projecteurs et pneus"
+    },
+    {
+      "id": 5,
+      "label": "Protection des occupants en cas d’accident"
+    },
+    {
+      "id": 6,
+      "label": "Protection des biens à l’intérieur du véhiculel"
+    }
+  ],
+  "supplements": [
+    {
+      "id": 1,
+      "label": "Assistance routière",
+      "sub_label": "24h/24 & 7j/7",
+      "description": "Bénéficiez d’une assistance routière et d’un dépannage sans frais en cas de panne ou d’accident lors de votre voyage.",
+      "price": 18,
+      "picture": "assets/supplements/1"
+    },
+    {
+      "id": 2,
+      "label": "Protection occupants",
+      "sub_label": "Protégez vos passagers en cas d’accident",
+      "description": "Protégez vos occupants grâce à notre assurance. Cette dernière couvre vos occupants en cas d’accident.",
+      "price": 26,
+      "picture": "assets/supplements/2"
+    },
+    {
+      "id": 3,
+      "label": "Protection premium",
+      "sub_label": "Protégez vos passagers et le contenu du véhicule",
+      "description": "Protégez vos occupants et vos équipements grâce à notre assurance. Cette dernière couvre vos occupants en cas d’accident, et vos équipements personnels en cas de vol.",
+      "price": 34,
+      "picture": "assets/supplements/3"
+    },
+    {
+      "id": 4,
+      "label": "Protection des dégâts",
+      "sub_label": "Protégez votre véhicule contre des dégâts",
+      "description": "Assurez votre véhicule contre les dégâts causés par vous ou par autrui. Le pare-brise, les vitres, projecteurs et pneus sont couverts.",
+      "price": 31.4,
+      "picture": "assets/supplements/4"
+    },
+    {
+      "id": 5,
+      "label": "Jeune conducteur",
+      "sub_label": "",
+      "description": "",
+      "price": 79.82,
+      "picture": "assets/supplements/5"
+    }
+  ],
+  "reservation": [
+    {
+      "id": 1,
+      "user": 3,
+      "vehicle": 2,
+      "assurance": 1,
+      "supplements": [1,3],
+      "station_departure": 1,
+      "date_departure": "2023-12-13 08:15:00",
+      "station_arrival": 1,
+      "date_arrival": "2023-12-16 17:00:00",
+      "pilot": [
+        {
+          "name": "DUPONT",
+          "surname": "Clément",
+          "birthday": "2001-12-12",
+          "mail": "clem.dupont84&gmail.com",
+          "phone": "0789097860"
+        }
+      ],
+      "payment": true
+    }
+  ],
+  "promotionCode": [
+    {
+      "code": "NOEL23",
+      "validity": "2023-12-25"
+    },
+    {
+      "code": "BACKFRIDAY1123",
+      "validity": "2023-11-30"
+    }
+  ]
+}
