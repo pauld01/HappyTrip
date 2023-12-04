@@ -1,0 +1,24 @@
+.nav{
+    background-color: rgb(20, 45, 119);
+    width: 100%;
+    padding-bottom: 30px;
+    .navbar{
+        margin-top: 30px;
+        margin-left: 6%;
+        width: 100%;
+        .shortcuts{
+            display: inline;
+            margin-right: 6%;
+            a{
+                margin-right: 80px;
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+            }::selection{
+                text-decoration: underline;
+                text-decoration-color: rgb(255, 0, 0);
+                text-underline-offset: 6px;
+                text-decoration-thickness: 4px;
+            }
+        }
+    }
+}
