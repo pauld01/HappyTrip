@@ -24,9 +24,7 @@ export class ReservationComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Now you can access this.insuranceElements
     this.insuranceElements.changes.subscribe(() => {
-      // Logic that depends on this.insuranceElements
     });
   }
 
