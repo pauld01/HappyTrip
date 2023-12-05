@@ -13,6 +13,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "./home/search/search.component";
+import { DisableOthersDirective } from './directives/disable-others.directive';
 
 
 
@@ -26,7 +27,8 @@ import {SearchComponent} from "./home/search/search.component";
         ReservationComponent,
         LoginComponent,
         RegisterComponent,
-        SearchComponent
+        SearchComponent,
+        DisableOthersDirective
     ],
   imports: [
     BrowserModule,
