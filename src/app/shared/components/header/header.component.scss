@@ -13,11 +13,10 @@
                 margin-right: 80px;
                 color: rgb(255, 255, 255);
                 text-decoration: none;
-            }::selection{
+            }:hover {
                 text-decoration: underline;
-                text-decoration-color: rgb(255, 0, 0);
+                text-decoration-color: red;
                 text-underline-offset: 6px;
-                text-decoration-thickness: 4px;
             }
         }
     }
