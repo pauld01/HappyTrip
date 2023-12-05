@@ -1,5 +1,4 @@
-
-import { Component, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ReservationService } from '../shared/services/reservation.service';
 
@@ -8,13 +7,10 @@ import { ReservationService } from '../shared/services/reservation.service';
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.scss']
 })
-export class ReservationComponent implements OnInit {
-  reservationForm!: FormGroup;
-
+export class ReservationComponent implements OnInit, AfterViewInit {
   assurances: any[] = [];
-  @ViewChildren('assuranceElement') assuranceElements!: QueryList<ElementRef>;
-
-
+  reservationForm!: FormGroup;
+@ViewChildren('insuranceCheckbox') insuranceElements!: QueryList<ElementRef>;
   constructor(private fb: FormBuilder, private reservationService: ReservationService) {}
 
   ngOnInit() {
@@ -24,6 +20,13 @@ export class ReservationComponent implements OnInit {
 
     this.reservationService.getAssurances().subscribe(data => {
       this.assurances = data;
+    });
+  }
+
+  ngAfterViewInit() {
+    // Now you can access this.insuranceElements
+    this.insuranceElements.changes.subscribe(() => {
+      // Logic that depends on this.insuranceElements
     });
   }
 
