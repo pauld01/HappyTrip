@@ -1,1 +1,56 @@
-<p>register works!</p>
+<div class="home">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6">
+            <div class="container">
+                <h2>Inscription</h2>
+                <div class="container-search">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3>Prénom</h3>   
+                            <input class="text-input" type="text" placeholder="Clément" required>
+                            <h3>Adresse e-mail</h3>   
+                            <input class="text-input" type="text" placeholder="c.dupont@happytrip.com" required>
+                            <h3>Mot de passe</h3>   
+                            <input class="text-input" type="password" required>
+                            <div class="bottom-input">
+                                <input class="form-check-input" type="checkbox" value="" (change)="ShowOrHide()">
+                                <p>Contrat entreprise négocié</p>
+                                <div *ngIf="isDisplayed">
+                                    <input class="text-contract" type="text">
+                                    <p class="text-inf">Max. 10 caractères</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>Nom</h3>   
+                            <input class="text-input" type="text" placeholder="Dupont" required>
+                            <h3>Date de naissance</h3>   
+                            <input class="text-input" type="date" required>
+                            <h3>Confirmer mot de passe</h3>   
+                            <input class="text-input" type="password" required>
+                        </div>
+                        <div class="subscribe">
+                            <div>
+                                <input class="form-check-input" type="checkbox" value="" required>
+                                <p>J'ai lu et j'accepte les conditions générales d'utilisation de HappyTrip.</p>
+                            </div>
+                            <div>
+                                <input class="form-check-input" type="checkbox" value="" required>
+                                <p>Je consens à partager les données personnelles renseignées avec HappyTrip afin de pouvoir profiter des 
+                                    services auxquels je serai susceptible de souscrire ultérieurement.
+                                </p>
+                            </div>  
+                            <div class="bottom-input">
+                                <button class="search-button">S'inscrire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <img src="assets/troc.svg">
+        </div>
+    </div>  
+</div>

@@ -1,0 +1,92 @@
+.home{
+    background-color: rgb(20, 45, 119);
+}
+
+.container{
+    margin-top: 60px;
+    margin-bottom: 80px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 30px;
+    border-radius: 28px;
+}
+
+.container-search{
+    margin-top: 26px;
+    border-radius: 14px;
+    background-color: rgb(245, 245, 245);
+    padding: 30px;
+    p {
+        display: inline;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    select{
+        border: none;
+    }
+    .text-input{
+        border: solid 1px;
+        border-color: rgb(134, 134, 134);
+        border-radius: 8px;
+        padding: 8px;
+        color: rgb(134, 134, 134);
+        width: 98%;
+        margin-top: 6px;
+        margin-bottom: 24px;
+    }
+    .text-contract{
+        border: solid 1px;
+        border-color: rgb(134, 134, 134);
+        border-radius: 8px;
+        padding: 8px;
+        color: rgb(134, 134, 134);
+        width: 45%;
+        margin-top: 12px;
+        margin-bottom: 24px;
+    }
+    .text-inf{
+        font-size: 14px;
+        color: rgb(134, 134, 134);
+        margin-left: 10px;
+    }
+    .search-button{
+        border: none;
+        border-radius : 8px;
+        background-color: rgb(234, 210, 0);
+        margin-top: 10px;
+        padding: 8px 30px 8px 30px ;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        width: 100%;
+    }
+    .subscribe{
+        margin-top: 20px;
+    }
+}
+.bottom-input {
+    margin-top: 12px;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sign-in{
+    font-weight: 600;
+    margin-top: 30px;
+    p{
+        display: inline;
+    }
+    a{
+        margin-left: 6px;
+        display: inline;
+        color: rgb(0, 0, 0);
+    }
+}

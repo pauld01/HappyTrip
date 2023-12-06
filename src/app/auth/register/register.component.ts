@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  isDisplayed : boolean = false;
+
+  ShowOrHide() {
+    this.isDisplayed = !this.isDisplayed;
+  }
 }
