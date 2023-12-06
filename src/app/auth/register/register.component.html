@@ -5,14 +5,14 @@
             <div class="container">
                 <h2>Inscription</h2>
                 <div class="container-search">
-                    <div class="row">
+                    <form class="row" [formGroup]="registerForm" (ngSubmit)="addUser()">
                         <div class="col-lg-6">
                             <h3>Prénom</h3>   
-                            <input class="text-input" type="text" placeholder="Clément" required>
+                            <input class="text-input" type="text" placeholder="Clément" formControlName="surname">
                             <h3>Adresse e-mail</h3>   
-                            <input class="text-input" type="text" placeholder="c.dupont@happytrip.com" required>
+                            <input class="text-input" type="text" placeholder="c.dupont@happytrip.com" formControlName="login">
                             <h3>Mot de passe</h3>   
-                            <input class="text-input" type="password" required>
+                            <input class="text-input" type="password" formControlName="password">
                             <div class="bottom-input">
                                 <input class="form-check-input" type="checkbox" value="" (change)="ShowOrHide()">
                                 <p>Contrat entreprise négocié</p>
@@ -24,11 +24,11 @@
                         </div>
                         <div class="col-lg-6">
                             <h3>Nom</h3>   
-                            <input class="text-input" type="text" placeholder="Dupont" required>
+                            <input class="text-input" type="text" placeholder="Dupont" formControlName="name">
                             <h3>Date de naissance</h3>   
-                            <input class="text-input" type="date" required>
+                            <input class="text-input" type="date" formControlName="birthday">
                             <h3>Confirmer mot de passe</h3>   
-                            <input class="text-input" type="password" required>
+                            <input class="text-input" type="password" formControlName="confirmPassword">
                         </div>
                         <div class="subscribe">
                             <div>
@@ -45,7 +45,7 @@
                                 <button class="search-button">S'inscrire</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
