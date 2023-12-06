@@ -26,7 +26,7 @@ import {SearchComponent} from "./home/search/search.component";
         ReservationComponent,
         LoginComponent,
         RegisterComponent,
-        SearchComponent
+        SearchComponent,
     ],
   imports: [
     BrowserModule,

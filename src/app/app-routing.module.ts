@@ -27,7 +27,7 @@ const routes: Routes = [
   {
     path: 'reservation/:idReservation',
     component: ReservationComponent
-  }
+  },
 ];
 
 @NgModule({
