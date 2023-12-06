@@ -1,1 +1,13 @@
-<p>reservation works!</p>
+
+<!-- reservation.component.html -->
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+  <div *ngFor="let assurance of assurances" class="insurance-option">
+    <input #insuranceCheckbox type="checkbox" formControlName="insurance" [value]="assurance.id" appDisableOthers [insuranceOptions]="insuranceElements">
+    <label>
+      <strong>{{ assurance.label }}</strong>
+      <span class="insurance-info"> - {{ assurance.price }} (Cost: {{ assurance.caution }})</span>
+    </label>
+  </div>
+
+  <button type="submit">Réserver</button>
+</form>
