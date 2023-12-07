@@ -33,11 +33,19 @@
     .button-left{
         background-image: url(../../../assets/aklasse.svg);
         background-repeat: no-repeat;
+        p{
+            margin-top: 8px;
+            margin-left: 80px;
+        }
     }
     .button-right{
         background-image: url(../../../assets/transporter.svg);
         background-position: 100%;
         background-repeat: no-repeat;
+        p{
+            margin-top: 8px;
+            margin-right: 80px;
+        }
     }
     img {
         display: inline;
