@@ -4,19 +4,28 @@
     padding-right: 6%;
     padding-bottom: 2%;
     .step{
-        background-color: rgb(217, 217, 217);
-        border-radius: 10px;
-        padding: 8px;
+        border-radius: 8px;
+        padding: 0px;
     }
     .contain{
         background-color: white;
         border-radius: 6px;
     }
 }
+.step1{
+    background-color: rgb(242, 218, 1);
+    border-radius: 8px;
+    padding: 8px;
+}
+.step2, .step3, .step4{
+    background-color: rgb(231, 231, 231);
+    border-radius: 8px;
+    padding: 8px;
+}
 p{
     padding-left: 6px;
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
 }
 h3{
@@ -24,12 +33,12 @@ h3{
     font-weight: 600;
     padding-top: 6px;
     padding-left: 6px;
-    font-size: 14px;
+    font-size: 12px;
 }
 h4{
     padding-left: 6px;
     margin-bottom: 2px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
 }
 h5{
@@ -37,10 +46,10 @@ h5{
     padding-left: 6px;
     color: rgb(134, 134, 134);
     display: inline;
-    font-size: 11px;
+    font-size: 10px;
 }
 h2{
-    font-size: 24px;
+    font-size: 22px;
 }
 .time{
     margin-left: 12px;
@@ -79,7 +88,7 @@ h2{
         svg{
             cursor: pointer;
             margin-left: 4px;
-            margin-right: 10%;
+            margin-right: 9%;
             margin-top: 8px;
         }
         .filter-button{
@@ -97,8 +106,6 @@ table {
         border-top: solid 1px;
         border-color: rgb(134, 134, 134);
         padding-top: 20px;
-        padding-right: 20px;
-        padding-left: 20px;
         padding-bottom: 20px;
     }
     tr {
@@ -144,7 +151,7 @@ table {
 
     .last{
         padding-right: 10px;
-        padding-left: 216px;
+        padding-left: 170px;
         text-align: end;
         .before-price{
             font-size: 10px;
@@ -153,7 +160,7 @@ table {
             padding: 0;
         }
         .price{
-            font-size: 24px;
+            font-size: 22px;
             margin: 0;
             padding: 0;
         }
