@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent {
 
+  isDisplayed : boolean = false;
+  isShowed : boolean = true
+
+  ShowOrHide() {
+    this.isDisplayed = !this.isDisplayed;
+  }
+
+  ShowOrHideField() {
+    this.isShowed = !this.isShowed;
+  }
 }
