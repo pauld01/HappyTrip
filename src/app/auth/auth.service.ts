@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import {User} from "../shared/models/user";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  user: { id: string; login: string; password: string; name: string; surname: string; birthday: string; } | undefined;
+  user: User | undefined;
 
   constructor(
       private http: HttpClient
   ) { }
 
-  addUser(user: { login: string; password: string; name: string; surname: string; birthday: string; }) {
+  addUser(user: User) {
     return this.http.post('http://localhost:3000/users', user).subscribe();
   }
 
-  login(user: { username: string; password: string; }) {
-    return this.http.get('http://localhost:3000/users?username=' + user.username + '&password=' + user.password);
+  login(user: User) {
+    return this.http.get('http://localhost:3000/users?login=' + user.login + '&password=' + user.password);
   }
 
   logout() {
@@ -28,7 +29,7 @@ export class AuthService {
     localStorage.setItem('user', '' + this.user?.id);
   }
 
-  getSavedUser() {
+  getSavedUser()  {
     return localStorage.getItem('user');
   }
 

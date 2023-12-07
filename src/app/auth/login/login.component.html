@@ -6,9 +6,9 @@
                 <h2>Connexion</h2>
                 <form class="container-search" [formGroup]="loginForm" (ngSubmit)="login()">
                     <h3>ID HappyTrip ou adresse e-mail</h3>   
-                    <input class="text-input" type="text" placeholder="my-email@happytrip.com" formControlName="username">
+                    <input class="text-input" type="text" placeholder="my-email@happytrip.com" formControlName="login">
                     <h3>Mot de passe</h3>   
-                    <input class="text-input" type="text" placeholder="HappyTrip@" formControlName="password">
+                    <input class="text-input" type="password" placeholder="HappyTrip@" formControlName="password">
                     <div class="bottom-input">
                         <input class="form-check-input" type="checkbox" value="">
                         <p>Mémoriser mes identifiants</p>

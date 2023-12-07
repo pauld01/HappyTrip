@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
+import {User} from "../../shared/models/user";
 
 @Component({
   selector: 'app-register',
@@ -19,9 +20,12 @@ export class RegisterComponent {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      name: new FormControl('', Validators.required),
+      surname: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required),
+      birthday: [''],
+      login: ['']
     }, { validators: this.checkPasswords });
   }
 
@@ -30,14 +34,15 @@ export class RegisterComponent {
   }
 
   addUser() {
-    if (this.registerForm.invalid) return;
-    this.authService.addUser({
-      login: this.registerForm.value.login,
-      password: this.registerForm.value.password,
-      name: this.registerForm.value.name,
-      surname: this.registerForm.value.surname,
-      birthday: this.registerForm.value.birthday,
-    });
+    if (this.registerForm.invalid){ return; }
+    this.authService.addUser(
+        new User(
+            this.registerForm.value.login,
+            this.registerForm.value.password,
+            this.registerForm.value.name,
+            this.registerForm.value.surname
+        )
+    );
     this.router.navigate(['/login']);
   }
 
