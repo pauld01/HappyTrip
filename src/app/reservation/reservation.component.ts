@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './reservation.component.scss'
 })
 export class ReservationComponent {
+  currentStep = 1;
 
+  goToNextStep(): void {
+      this.currentStep++;
+  }
+
+  goToPreviousStep(): void {
+      this.currentStep--;
+  }
 }
