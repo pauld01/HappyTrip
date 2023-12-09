@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "./home/search/search.component";
 import { DisableOthersDirective } from './directives/disable-others.directive';
+import {ImageSwitcherComponent} from "./shared/components/image-switcher/image-switcher.component";
 
 
 
@@ -30,13 +31,14 @@ import { DisableOthersDirective } from './directives/disable-others.directive';
         SearchComponent,
         DisableOthersDirective
     ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ImageSwitcherComponent,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
