@@ -17,7 +17,6 @@ import { DisableOthersDirective } from './directives/disable-others.directive';
 import {ImageSwitcherComponent} from "./shared/components/image-switcher/image-switcher.component";
 
 
-
 @NgModule({
     declarations: [
         AppComponent,

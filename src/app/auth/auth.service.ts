@@ -34,7 +34,8 @@ export class AuthService {
   }
 
   isUserConnected() {
-    if (this.user) {
+    if(this.getSavedUser() !== undefined) { return true; }
+    else if (this.user) {
       this.saveUser();
       return true;
     } else if (this.getSavedUser()) {
@@ -46,7 +47,7 @@ export class AuthService {
     return false;
   }
 
-  private getSavedUserInfo() {
+  getSavedUserInfo() {
     return this.http.get('http://localhost:3000/users?id=' + this.getSavedUser());
   }
 }

@@ -5,6 +5,7 @@ import {LoginComponent} from "./auth/login/login.component";
 import {RegisterComponent} from "./auth/register/register.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {ReservationComponent} from "./reservation/reservation.component";
+import {HelpComponent} from "./home/help/help.component";
 
 
 const routes: Routes = [
@@ -21,12 +22,16 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'profile/:idUser',
+    path: 'profile',
     component: ProfileComponent
   },
   {
     path: 'reservation/:idReservation',
     component: ReservationComponent
+  },
+  {
+    path: 'aide',
+    component: HelpComponent
   },
 ];
 

@@ -1,5 +1,3 @@
-// @ts-ignore
-import crypto from "crypto";
 import {CarType} from "./car-type";
 import {VehicleType} from "./vehicle-type";
 

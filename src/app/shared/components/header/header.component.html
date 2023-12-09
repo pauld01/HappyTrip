@@ -2,11 +2,10 @@
     <nav class="navbar">
         <img routerLink="" src="assets/logo.svg" alt="logo">
         <div class="shortcuts">
-            <a *ngIf="!isUserConnected" routerLink="./login">Connexion</a>
-            <a *ngIf="isUserConnected" (click)="logout()">Deconnexion</a>
+            <a *ngIf="!isUserConnected" href="/login">Connexion</a>
             <a href="">France</a>
-            <a routerLink="./aide">Aide</a>
-            <a>Profil</a>
+            <a href="/aide">Aide</a>
+            <a *ngIf="isUserConnected" href="/profile">Profil</a>
         </div>
     </nav>
 </div>

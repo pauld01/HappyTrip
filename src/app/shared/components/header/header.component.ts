@@ -11,9 +11,7 @@ export class HeaderComponent implements OnInit{
 
   constructor(
       private authService: AuthService
-  ) {
-    this.isUserConnected = authService.isUserConnected();
-  }
+  ) {}
 
   ngOnInit() {
     this.isUserConnected = this.authService.isUserConnected();
