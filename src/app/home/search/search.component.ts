@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './search.component.scss'
 })
 export class SearchComponent {
+  homeImageUrl: string = 'assets/auto-home.svg';
 
+  onAutoButtonClick(): void {
+    this.homeImageUrl = 'assets/auto-home.svg';
+  }
+
+  onUtilitaireButtonClick(): void {
+    this.homeImageUrl = 'assets/transporter-home.png';
+  }
 }

@@ -5,10 +5,10 @@
             <div class="container">
                 <h2>Où souhaitez-vous aller aujourd'hui ?</h2>
                 <div class="container-toogle">
-                    <div class="toogle">
-                        <button class="button-left"><p>Autos</p></button>
-                        <button class="button-right"><p>Utilitaires</p></button>
-                    </div>
+                    <app-image-switcher
+                            (autoClicked)="onAutoButtonClick()"
+                            (utilitaireClicked)="onUtilitaireButtonClick()"
+                    ></app-image-switcher>
                 </div>
                 <div class="container-search">
                     <div class="row">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <img src="assets/auto-home.svg">
+            <img [src]="homeImageUrl">
         </div>
     </div>  
 </div>

@@ -1,0 +1,41 @@
+.toogle{
+  button{
+    background-color: rgb(245, 245, 245);;
+    display: inline;
+    width: 46%;
+    height: 42px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+  }
+  .button-left{
+    background-image: url(../../../../assets/aklasse.svg);
+    background-repeat: no-repeat;
+    p{
+      margin-top: 8px;
+      margin-left: 80px;
+    }
+  }
+  .button-right{
+    background-image: url(../../../../assets/transporter.svg);
+    background-position: 100%;
+    background-repeat: no-repeat;
+    p{
+      margin-top: 8px;
+      margin-right: 80px;
+    }
+  }
+  img {
+    display: inline;
+  }
+  .button-left:active{
+    background-color: rgb(20, 45, 119);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+  }
+  .button-right:active{
+    background-color: rgb(20, 45, 119);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+  }
+}
