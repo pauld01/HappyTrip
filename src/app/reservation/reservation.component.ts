@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './reservation.component.scss'
 })
 export class ReservationComponent {
-
+  component : boolean = true;
+  NextStep(){
+    this.component = !this.component
+  }
 }
