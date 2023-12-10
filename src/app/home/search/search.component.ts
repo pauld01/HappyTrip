@@ -13,6 +13,6 @@ export class SearchComponent {
   }
 
   onUtilitaireButtonClick(): void {
-    this.homeImageUrl = 'assets/transporter-home.png';
+    this.homeImageUrl = 'assets/vw-transporter.png';
   }
 }
