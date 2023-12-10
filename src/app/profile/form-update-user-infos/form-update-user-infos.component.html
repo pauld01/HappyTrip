@@ -1,0 +1,19 @@
+<form class="row" [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
+    <div class="col-lg-6">
+        <h3>Prénom</h3>
+        <input class="text-input" type="text" placeholder="Clément" formControlName="surname">
+        <h3>Adresse e-mail</h3>
+        <input class="text-input" type="text" placeholder="c.dupont@happytrip.com" formControlName="mail">
+    </div>
+    <div class="col-lg-6">
+        <h3>Nom</h3>
+        <input class="text-input" type="text" placeholder="Dupont" formControlName="name">
+        <h3>Date de naissance</h3>
+        <input class="text-input" type="date" formControlName="birthday">
+    </div>
+    <div class="subscribe">
+        <div class="bottom-input">
+            <button class="search-button">Modifier</button>
+        </div>
+    </div>
+</form>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {User} from "../shared/models/user";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class AuthService {
 
   addUser(user: User) {
     return this.http.post('http://localhost:3000/users', user).subscribe();
+  }
+
+  updateUser(user: User): Observable<User> {
+    return this.http.put<User>('http://localhost:3000/users/'+user.id, user);
   }
 
   login(user: User) {

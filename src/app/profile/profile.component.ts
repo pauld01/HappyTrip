@@ -18,12 +18,15 @@ export class ProfileComponent implements OnInit {
     constructor(
       private authService: AuthService,
       private reservationService: ReservationService
-    ) {}
+    ) {
+
+
+    }
 
     ngOnInit() {
         this.authService.getSavedUserInfo().subscribe(
             (user: any) => {
-                this.currentUser = user;
+                this.currentUser = user[0];
                 this.loadUserReservations();
             },
             (error) => {

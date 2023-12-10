@@ -26,12 +26,11 @@
     },
     {
       "id": "5db16776-0a95-4879-92d3-a475f1f2e722",
-      "login": "paul.duplessi@efrei.net",
-      "password": "azerty",
-      "name": "DUP",
+      "mail": "paul.duplessi@efrei.net",
+      "password": "azertyu",
+      "name": "DUPL",
       "surname": "Paul",
-      "phone": "",
-      "mail": "paul.duplessi@efrei.net"
+      "birthday": "2001-01-09"
     }
   ],
   "station": [

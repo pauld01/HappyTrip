@@ -13,15 +13,15 @@ export class ReservationService {
   ) {}
 
   getReservations(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:3000/reservations');
+    return this.http.get<any[]>('http://localhost:3000/reservation');
   }
 
   getReservationsOfUser(user: User) {
-    return this.http.get<any[]>('http://localhost:3000/reservations?user=' + user.id);
+    return this.http.get('http://localhost:3000/reservation?user=' + user.id);
   }
 
   addReservation(reservation: any): Observable<any> {
-    return this.http.post<any>('http://localhost:3000/reservations', reservation);
+    return this.http.post<any>('http://localhost:3000/reservation', reservation);
   }
 
   getAssurances(): Observable<any[]> {
