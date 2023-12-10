@@ -33,7 +33,17 @@
     color: rgb(255, 255, 255);
     font-weight: 500;
   }
+  .button-left:focus{
+    background-color: rgb(20, 45, 119);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+  }
   .button-right:active{
+    background-color: rgb(20, 45, 119);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+  }
+  .button-right:focus{
     background-color: rgb(20, 45, 119);
     color: rgb(255, 255, 255);
     font-weight: 500;
