@@ -4,6 +4,7 @@ import {ReservationService} from "../shared/services/reservation/reservation.ser
 import {User} from "../shared/models/user";
 import {Reservation} from "../shared/models/reservation";
 import {switchMap} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profile',
@@ -17,11 +18,9 @@ export class ProfileComponent implements OnInit {
 
     constructor(
       private authService: AuthService,
-      private reservationService: ReservationService
-    ) {
-
-
-    }
+      private reservationService: ReservationService,
+      private router: Router
+    ) {}
 
     ngOnInit() {
         this.authService.getSavedUserInfo().subscribe(
@@ -48,5 +47,10 @@ export class ProfileComponent implements OnInit {
         } else {
             console.warn('currentUser is undefined. Cannot load user reservations.');
         }
+    }
+
+    logout() {
+        this.authService.logout();
+        this.router.navigate(['/']);
     }
 }

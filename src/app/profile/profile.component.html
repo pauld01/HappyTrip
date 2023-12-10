@@ -8,6 +8,7 @@
                     <li [ngClass]="{active: onglet==2}" (click)="onglet=2">Mes informations personnelles</li>
                     <li [ngClass]="{active: onglet==3}" (click)="onglet=3">Mes réservations</li>
                     <li [ngClass]="{active: onglet==4}" (click)="onglet=4">Modifier mon mot de passe</li>
+                    <li (click)="logout()">Se déconnecter</li>
                 </ul>
             </div>
         </div>
