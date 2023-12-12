@@ -1,12 +1,14 @@
 <div class="toogle">
     <button 
             class="button-left"
+            [ngClass]="{active: vehiculeType==1}"
             (click)="onAutoButtonClick()"
     >
         <p>Autos</p>
     </button>
     <button
             class="button-right"
+            [ngClass]="{active: vehiculeType==2}"
             (click)="onUtilitaireButtonClick()"
     >
         <p>Utilitaires</p>
