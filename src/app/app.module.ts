@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {AppComponent} from "./app.component";
 import {HeaderComponent} from "./shared/components/header/header.component";
 import {FooterComponent} from "./shared/components/footer/footer.component";
@@ -14,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "./home/search/search.component";
 import { DisableOthersDirective } from './directives/disable-others.directive';
+import {ImageSwitcherComponent} from "./shared/components/image-switcher/image-switcher.component";
 
 
 
@@ -30,13 +30,14 @@ import { DisableOthersDirective } from './directives/disable-others.directive';
         SearchComponent,
         DisableOthersDirective
     ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ImageSwitcherComponent,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
