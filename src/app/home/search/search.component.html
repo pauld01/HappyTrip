@@ -13,25 +13,29 @@
                 <div class="container-search">
                     <div class="row">
                         <div class="col-lg-7">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" type="checkbox" value="" (change)="ShowOrHideField()">
                             <p>Station de retour identique</p>
-                            <input class="text-input" type="text" placeholder="Station de départ">
-                            <input class="text-input" type="text" placeholder="Station de retour">
+                            <select class="station-input">
+                                <option [value]="" selected>Station de départ</option>
+                                <option>CDG T2F</option>
+                            </select>
+                            <select class="station-input" *ngIf="isShowed">
+                                <option [value]="" selected>Station de retour</option>
+                                <option>CDG T2F</option>
+                            </select>
                             <div class="bottom-input">
-                                <input class="form-check-input" type="checkbox" value="">
+                                <input class="form-check-input" type="checkbox" value="" (change)="ShowOrHide()">
                                 <p>Contrat entreprise négocié</p>
+                            </div>
+                            <div *ngIf="isDisplayed" class="enterprise-contract">
+                                <input type="text" class="text-input">
+                                <p>Max. 10 caractères</p>
                             </div>
                         </div>
                         <div class="col-lg-5">
                             <p>Vous avez</p>
                             <select>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
-                                <option>21</option>
-                                <option>22</option>
-                                <option>23</option>
-                                <option>24</option>
+                                <option *ngFor="let age of ages" [value]="age">{{age}}</option>
                                 <option selected>25+</option>
                             </select>
                             <p>ans</p>
@@ -46,7 +50,73 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <img [src]="homeImageUrl">
+            <img [src]="homeImageUrl" style="width: 657px;">
         </div>
     </div>  
+</div>
+<div class="offers">
+    <h1>Toutes nos offres du moment</h1>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="special-offers-1">
+                <div class="quadrat">
+                    <div class="quadrat-reduc">
+                        <p>Jusqu'à</p>
+                        <h2>-30%</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="special-offers-2">
+                <div class="quadrat">
+                    <div class="quadrat-reduc">
+                        <p>Jusqu'à</p>
+                        <h2>-30%</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="special-offers-3">
+                <div class="quadrat">
+                    <div class="quadrat-reduc">
+                        <p>Jusqu'à</p>
+                        <h2>-30%</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="special-offers-4">
+                <div class="quadrat">
+                    <div class="quadrat-reduc">
+                        <p>Jusqu'à</p>
+                        <h2>-30%</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>Notre flotte de véhicules</h1>
+    <div class="flotte">
+        <h3>Compactes & SUV</h3>
+        <img class="first" src="assets/a1.svg">
+        <img src="assets/golf.svg">
+        <img src="assets/taigo.svg">
+        <img src="assets/tiguan.svg">
+    </div>
+    <div class="flotte">
+        <h3>Familiales & Luxueuses</h3>
+        <img class="first" src="assets/a4-avant.svg">
+        <img src="assets/sq7.svg">
+        <img src="assets/750-limo.svg">
+        <img src="assets/e-cab.svg">
+    </div>
+    <div class="flotte">
+        <h3>Sportives & Exclusives</h3>
+        <img class="first" src="assets/taycan.svg">
+        <img src="assets/urus.svg">
+    </div>
 </div>
