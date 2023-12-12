@@ -6,10 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './reservation.component.scss'
 })
 export class ReservationComponent {
-  component : boolean = true;
-  assurance : boolean = false;
-  NextStep(){
-    this.component = !this.component,
-    this.assurance = !this.assurance
+  currentStep = 1;
+
+  goToNextStep(): void {
+      this.currentStep++;
+  }
+
+  goToPreviousStep(): void {
+      this.currentStep--;
   }
 }
