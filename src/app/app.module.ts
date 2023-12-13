@@ -14,6 +14,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "./home/search/search.component";
 import { DisableOthersDirective } from './directives/disable-others.directive';
 import {ImageSwitcherComponent} from "./shared/components/image-switcher/image-switcher.component";
+import {FormUpdateUserInfosComponent} from "./profile/form-update-user-infos/form-update-user-infos.component";
+import {FormUpdateUserPasswordComponent} from "./profile/form-update-user-password/form-update-user-password.component";
 
 
 
@@ -37,6 +39,8 @@ import {ImageSwitcherComponent} from "./shared/components/image-switcher/image-s
         FormsModule,
         ReactiveFormsModule,
         ImageSwitcherComponent,
+        FormUpdateUserInfosComponent,
+        FormUpdateUserPasswordComponent,
     ],
   providers: [],
   bootstrap: [AppComponent]

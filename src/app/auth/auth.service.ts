@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {User} from "../shared/models/user";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class AuthService {
 
   addUser(user: User) {
     return this.http.post('http://localhost:3000/users', user).subscribe();
+  }
+
+  updateUser(user: User): Observable<User> {
+    return this.http.put<User>('http://localhost:3000/users/'+user.id, user);
   }
 
   login(user: User) {
@@ -34,7 +39,8 @@ export class AuthService {
   }
 
   isUserConnected() {
-    if (this.user) {
+    if(this.getSavedUser() !== undefined) { return true; }
+    else if (this.user) {
       this.saveUser();
       return true;
     } else if (this.getSavedUser()) {
@@ -46,7 +52,7 @@ export class AuthService {
     return false;
   }
 
-  private getSavedUserInfo() {
+  getSavedUserInfo() {
     return this.http.get('http://localhost:3000/users?id=' + this.getSavedUser());
   }
 }

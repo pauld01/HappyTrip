@@ -6,6 +6,7 @@ export class User {
     surname: string = "";
     phone?: string;
     mail?: string;
+    birthday?: string;
 
     constructor(
         login: string,
@@ -13,7 +14,8 @@ export class User {
         name: string,
         surname: string,
         phone: string = "",
-        mail: string = ""
+        mail: string = "",
+        birthday: string = ""
     ) {
         this.login = login;
         this.password = password;
@@ -22,9 +24,6 @@ export class User {
         this.phone = phone;
         if(mail === "") { this.mail = login; }
         else { this.mail = mail; }
-    }
-
-    getFullname(){
-        return this.surname[0].toLocaleUpperCase() + this.surname.substr(1).toLowerCase() + " " + this.name.toUpperCase();
+        this.birthday = birthday
     }
 }

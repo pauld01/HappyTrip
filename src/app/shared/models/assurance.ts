@@ -1,4 +1,3 @@
-import crypto from "crypto";
 
 export class Assurance {
     id: string = crypto.randomUUID();

@@ -1,5 +1,3 @@
-import crypto from "crypto";
-
 export class Supplement {
     id: string = crypto.randomUUID();
     label: string = "";
