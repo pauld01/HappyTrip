@@ -1,22 +1,32 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SearchService} from "../../shared/services/search.service";
+import {Station} from "../../shared/models/station";
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
 })
-export class SearchComponent {
-  homeImageUrl: string = 'assets/auto-home.svg';
-  isDisplayed : boolean = false;
-  isShowed : boolean = true
+export class SearchComponent implements OnInit{
   ages: number[] = [18, 19, 20, 21, 22, 23, 24];
+  stations: Station[] = [];
+  homeImageUrl: string = 'assets/auto-home.svg';
 
-  ShowOrHide() {
-    this.isDisplayed = !this.isDisplayed;
+  constructor(
+      private searchService: SearchService
+  ) {
+
   }
 
-  ShowOrHideField() {
-    this.isShowed = !this.isShowed;
+  ngOnInit() {
+    this.searchService.getAllStations().subscribe(
+        (stations: any) => {
+          this.stations = stations;
+        },
+        (error) => {
+          console.error('Une erreur s\'est produite :', error);
+        }
+    );
   }
 
   onAutoButtonClick(): void {
@@ -24,6 +34,6 @@ export class SearchComponent {
   }
 
   onUtilitaireButtonClick(): void {
-    this.homeImageUrl = 'assets/vw-transporter.png';
+    this.homeImageUrl = 'assets/transporter-home.png';
   }
 }
