@@ -16,6 +16,9 @@ import { DisableOthersDirective } from './directives/disable-others.directive';
 import {ImageSwitcherComponent} from "./shared/components/image-switcher/image-switcher.component";
 import {FormUpdateUserInfosComponent} from "./profile/form-update-user-infos/form-update-user-infos.component";
 import {FormUpdateUserPasswordComponent} from "./profile/form-update-user-password/form-update-user-password.component";
+import {SelectVehicleComponent} from "./reservation/select-vehicle/select-vehicle.component";
+import {SelectExtrasComponent} from "./reservation/select-extras/select-extras.component";
+import {PayementComponent} from "./reservation/payement/payement.component";
 
 
 
@@ -41,6 +44,9 @@ import {FormUpdateUserPasswordComponent} from "./profile/form-update-user-passwo
         ImageSwitcherComponent,
         FormUpdateUserInfosComponent,
         FormUpdateUserPasswordComponent,
+        SelectVehicleComponent,
+        SelectExtrasComponent,
+        PayementComponent,
     ],
   providers: [],
   bootstrap: [AppComponent]

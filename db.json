@@ -87,15 +87,14 @@
       "model": "A1",
       "year_model": "2023",
       "power": "130ch",
-      "characteristics": [
-        {
-          "seating_places": 5,
-          "doors": 5,
-          "gearbox": "A",
-          "bags": 3
-        }
-      ],
-      "picture": "assets/vehicule/1/",
+      "characteristics":
+      {
+        "seating_places": 5,
+        "doors": 5,
+        "gearbox": "M",
+        "bags": 2
+      },
+      "picture": "assets/a1.svg",
       "price": 42.95
     },
     {
@@ -107,15 +106,14 @@
       "model": "TAIGO",
       "year_model": "2023",
       "power": "130ch",
-      "characteristics": [
-        {
-          "seating_places": 5,
-          "doors": 5,
-          "gearbox": "A",
-          "bags": 3
-        }
-      ],
-      "picture": "assets/vehicule/2/",
+      "characteristics":
+      {
+        "seating_places": 5,
+        "doors": 5,
+        "gearbox": "A",
+        "bags": 2
+      },
+      "picture": "assets/golf.svg",
       "price": 51.95
     },
     {
@@ -127,15 +125,14 @@
       "model": "TAIGO",
       "year_model": "2023",
       "power": "130ch",
-      "characteristics": [
-        {
-          "seating_places": 5,
-          "doors": 5,
-          "gearbox": "A",
-          "bags": 3
-        }
-      ],
-      "picture": "assets/vehicule/3/",
+      "characteristics":
+      {
+        "seating_places": 5,
+        "doors": 5,
+        "gearbox": "A",
+        "bags": 3
+      },
+      "picture": "assets/taigo.svg",
       "price": 58.95
     }
   ],

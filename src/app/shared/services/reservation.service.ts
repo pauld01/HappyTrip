@@ -32,4 +32,16 @@ export class ReservationService {
   getVehicles() {
     return this.http.get('http://localhost:3000/vehicle');
   }
+
+  getSupplements() {
+    return this.http.get('http://localhost:3000/supplement');
+  }
+
+  getCarType() {
+    return this.http.get('http://localhost:3000/carType');
+  }
+
+  getCarTypeById(id: string) {
+    return this.http.get('http://localhost:3000/carType?id=' + id);
+  }
 }
