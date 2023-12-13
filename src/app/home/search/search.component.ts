@@ -14,9 +14,7 @@ export class SearchComponent implements OnInit{
 
   constructor(
       private searchService: SearchService
-  ) {
-
-  }
+  ) { }
 
   ngOnInit() {
     this.searchService.getAllStations().subscribe(
@@ -34,6 +32,6 @@ export class SearchComponent implements OnInit{
   }
 
   onUtilitaireButtonClick(): void {
-    this.homeImageUrl = 'assets/transporter-home.png';
+    this.homeImageUrl = 'assets/vw-transporter.png';
   }
 }

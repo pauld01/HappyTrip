@@ -6,22 +6,17 @@
     .step{
         border-radius: 8px;
         padding: 0px;
+        background-color: rgb(231, 231, 231);
+        border-radius: 8px;
+        padding: 8px;
+        .active { background-color: rgb(242, 218, 1); }
     }
     .contain{
         background-color: white;
         border-radius: 6px;
     }
 }
-.step1{
-    background-color: rgb(242, 218, 1);
-    border-radius: 8px;
-    padding: 8px;
-}
-.step2, .step3, .step4{
-    background-color: rgb(231, 231, 231);
-    border-radius: 8px;
-    padding: 8px;
-}
+
 p{
     padding-left: 6px;
     margin: 0;
