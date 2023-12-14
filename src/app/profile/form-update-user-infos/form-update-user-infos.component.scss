@@ -1,0 +1,45 @@
+h1{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: rgb(20, 45, 119);
+}
+
+h2{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+}
+
+input{
+    width: 80%;
+    height: 38px;
+    border-radius: 8px;
+    border: solid 2px;
+    border-color: rgb(217, 217, 217);
+    padding: 4px;
+    margin-bottom: 10px;
+}
+#date{ width: 40%;}
+#complement-ad{ width: 100%;}
+#city{width: 100%;}
+#street{width: 100%;}
+#telephone{width: 56%;}
+
+button{
+    border: solid 1px;
+    border-radius : 8px;
+    border-color: rgb(234, 210, 0);
+    background-color: rgb(255, 255, 255);
+    padding: 8px 30px 8px 30px ;
+    font-weight: 500;
+    width: 190px;
+    color: rgb(234, 210, 0);
+    margin-top: 36px;
+    margin-left: 50%;
+}
+button:hover{
+    background-color: rgb(234, 210, 0);
+    color: rgb(0, 0, 0);
+}
