@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import {ReservationService} from "../services/reservation.service";
+import {map} from "rxjs";
 
 @Pipe({
     name: 'carType',
@@ -14,15 +15,12 @@ export class CarTypePipe implements PipeTransform {
   transform(id: string): string {
     let carType: string = "";
 
-    this.reservationService.getCarTypeById(id).subscribe(
-        (type: any) => {
-            console.log(type[0].label);
-            carType = type[0].label;
-        },
-        (error) => {
-          console.error('Une erreur s\'est produite :', error);
-        }
-    );
+      this.reservationService.getCarTypeById(id).pipe(
+              map((type: any) => (type && type.length > 0) ? type[0].label : 'Type Inconnu')
+      ).subscribe((typeName: string) => {
+         carType = typeName;
+         return carType;
+      });
     return carType || 'Type inconnu';
   }
 }

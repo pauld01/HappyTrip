@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="step1">
-                <div class="step" [ngClass]="{active: currentStep==1}" (click)="currentStep=1">
+                <div class="step" [ngClass]="{active: currentStep==1}">
                     <div class="row">
                         <div class="col-lg-2">1</div>
                         <div class="col-lg-10">
@@ -11,15 +11,13 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <h4>DEPART</h4>
-                                        <p>Paris CDG T2D</p>
-                                        <h5 class="date">2023-12-13</h5>
-                                        <h5 class="time">08:15</h5>
+                                        <p>{{ stationDepartureName }}</p>
+                                        <h5 class="date">{{reservation.date_departure}}</h5>
                                     </div>
                                     <div class="col-lg-6">
                                         <h4>RETOUR</h4>
-                                        <p>Paris CDG T2D</p>
-                                        <h5 class="date">2023-12-16</h5>
-                                        <h5 class="time">17:00</h5>
+                                        <p>{{ stationArrivalName }}</p>
+                                        <h5 class="date">{{reservation.date_arrival}}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -38,8 +36,8 @@
                                 <h3>VEHICULE</h3>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <p>VW GOLF</p>
-                                        <h5 class="price">207,80 €</h5>
+                                        <p>{{ vehicleInformations?.long_name ?? '' }}</p>
+                                        <h5 class="price"></h5> <!-- TODO gerer le calcul du prix -->
                                     </div>
                                 </div>
                             </div>
@@ -95,6 +93,6 @@
     </div>
 </div>
 
-<app-select-vehicle *ngIf="currentStep == 2" [vehicleList]="vehicles"></app-select-vehicle>
+<app-select-vehicle *ngIf="currentStep == 2" (click)="currentStep=3" [vehicleList]="vehicles" [reservation]="reservation"></app-select-vehicle>
 <app-select-extras *ngIf="currentStep == 3"></app-select-extras>
 <app-payement *ngIf="currentStep == 4"></app-payement>
