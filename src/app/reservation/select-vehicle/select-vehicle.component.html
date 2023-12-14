@@ -2,7 +2,7 @@
     <div  class="reservation-content">
         <h2>Choisissez un véhicule</h2>
         <div class="filter">
-            <p class="vehicle-number">12 véhicules disponibles</p>
+            <p class="vehicle-number">{{vehicleList.length}} véhicules disponibles</p>
             <p>Transmission</p><svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M5.70345 5.30376C5.31378 5.68944 4.68622 5.68944 4.29655 5.30376L0.666294 1.71074C0.0313215 1.08228 0.476354 0 1.36975 0L8.63026 0C9.52365 0 9.96868 1.08228 9.33371 1.71074L5.70345 5.30376Z" fill="#868686"/></svg>
             <p>Nombre de places</p><svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M5.70345 5.30376C5.31378 5.68944 4.68622 5.68944 4.29655 5.30376L0.666294 1.71074C0.0313215 1.08228 0.476354 0 1.36975 0L8.63026 0C9.52365 0 9.96868 1.08228 9.33371 1.71074L5.70345 5.30376Z" fill="#868686"/></svg>
             <p>Type</p><svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M5.70345 5.30376C5.31378 5.68944 4.68622 5.68944 4.29655 5.30376L0.666294 1.71074C0.0313215 1.08228 0.476354 0 1.36975 0L8.63026 0C9.52365 0 9.96868 1.08228 9.33371 1.71074L5.70345 5.30376Z" fill="#868686"/></svg>
@@ -48,8 +48,8 @@
                     <div class="select">
                         <p class="before-price">A PARTIR DE</p>
                         <p class="price">{{vehicle.price}} € / Jour</p>
-                        <p class="before-price">PRIX TOTAL 171,80 €</p> <!-- gérer le prix total en fonction du nombre de jours -->
-                        <button >Sélectionner</button>
+                        <p class="before-price">PRIX TOTAL 171,80 €</p> <!-- TODO  gérer le prix total en fonction du nombre de jours -->
+                        <button (click)="selectVehicle(vehicle.id)">Sélectionner</button>
                     </div>
                 </td>
             </tr>

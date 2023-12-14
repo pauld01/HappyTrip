@@ -11,16 +11,16 @@
                     ></app-image-switcher>
                 </div>
                 <div class="container-search">
-                    <div class="row">
+                    <form class="row" [formGroup]="searchForm" (ngSubmit)="createReservation()">
                         <div class="col-lg-7">
                             <input class="form-check-input" type="checkbox" value="">
                             <p>Station de retour identique</p>
-                            <select class="text-input">
-                                <option [value]="" selected>Station de départ</option>
+                            <select class="text-input" formControlName="station_departure">
+                                <option value="" selected>Station de départ</option>
                                 <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
                             </select>
-                            <select class="text-input">
-                                <option [value]="" selected>Station de retour</option>
+                            <select class="text-input" formControlName="station_arrival">
+                                <option value="" selected>Station de retour</option>
                                 <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
                             </select>
                             <div class="bottom-input">
@@ -35,13 +35,13 @@
                                 <option selected>25+</option>
                             </select>
                             <p>ans</p>
-                            <input class="text-input" type="datetime-local" placeholder="Date & Heure">
-                            <input class="text-input" type="datetime-local" placeholder="Date & Heure">
+                            <input class="text-input" type="datetime-local" placeholder="Date & Heure" formControlName="date_departure">
+                            <input class="text-input" type="datetime-local" placeholder="Date & Heure" formControlName="date_arrival">
                             <div class="bottom-input">
-                                <button routerLink="reservation/:idReservation" class="search-button">Rechercher</button>
+                                <button class="search-button" (click)="createReservation()">Rechercher</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
