@@ -1,43 +1,92 @@
 <div class="profile">
     <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-5">
-            <div class="container">
+        <div class="col-lg-3">
+            <div class="container-list">
                 <ul>
-                    <li [ngClass]="{active: onglet==1}" (click)="onglet=1">Vue d'ensemble</li>
-                    <li [ngClass]="{active: onglet==2}" (click)="onglet=2">Mes informations personnelles</li>
-                    <li [ngClass]="{active: onglet==3}" (click)="onglet=3">Mes réservations</li>
-                    <li [ngClass]="{active: onglet==4}" (click)="onglet=4">Modifier mon mot de passe</li>
-                    <li (click)="logout()">Se déconnecter</li>
+                    <li [ngClass]="{active: onglet==1}" (click)="onglet=1"><p>Vue d'ensemble</p></li>
+                    <li [ngClass]="{active: onglet==2}" (click)="onglet=2"><p>Mes informations personnelles</p></li>
+                    <li [ngClass]="{active: onglet==3}" (click)="onglet=3"><p>Mes réservations</p></li>
+                    <li [ngClass]="{active: onglet==4}" (click)="onglet=4"><p>Modifier mon mot de passe</p></li>
+                    <button (click)="logout()">Se déconnecter</button>
                 </ul>
             </div>
         </div>
-        <div class="col-lg-6">
-            <div [ngSwitch]="onglet">
-                <div *ngSwitchCase="1">
-                    <p><u>Nom</u> : {{currentUser?.name}}</p>
-                    <p><u>Prénom</u> : {{currentUser?.surname}}</p>
-                    <p><u>Mail</u> : {{currentUser?.login}}</p>
-                </div>
-                <div *ngSwitchCase="2">
-                    <app-form-update-user-infos [user]="currentUser"></app-form-update-user-infos>
-                </div>
-                <div *ngSwitchCase="3">
-                    <div *ngIf="userReservations.length > 0; else noReservations">
-                        <div *ngFor="let reservation of userReservations">
-                            <p><u>Date départ</u> : {{reservation.date_departure}}</p>
-                            <p><u>Date retour</u> : {{reservation.date_arrival}}</p>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-7">
+            <div class="container">
+                <div [ngSwitch]="onglet">
+                    <div *ngSwitchCase="1">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h1>Mon Profil</h1>
+                                <p class="name">{{currentUser?.surname}} </p>
+                                <p class="name">{{currentUser?.name}}</p>
+                                <div class="adress">
+                                    <p class="street">112 Avenue des Champs Elysées</p>
+                                    <p class="city">75008 PARIS</p>
+                                    <p class="country">France</p>
+                                </div>
+                                <div class="id-conducteur">
+                                    <p><strong>ID Conducteur : </strong></p>
+                                    <p>{{currentUser?.id}}</p>
+                                </div>
+                                <div class="email">
+                                    <p><strong>E-mail : </strong>
+                                    <p>{{currentUser?.login}}</p>
+                                </div>
+                                <p class="separation"></p>
+                                <h1>Mon compte fidélité</h1>
+                                <p><strong>HappyTrip Explorer</strong></p>
+                                <div class="validity">
+                                    <p><strong>Date de fin de validité : </strong></p>
+                                    <p>11/02/2025</p>
+                                </div>
+                                <div class="rate-locations">
+                                    <p><strong>Nombre de locations : </strong></p>
+                                    <p>3/10</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="assets/profil.svg">
+                            </div>
                         </div>
                     </div>
-                    <ng-template #noReservations>
-                        <p>Aucune réservation disponible.</p>
-                    </ng-template>
+                    <div *ngSwitchCase="2">
+                        <app-form-update-user-infos [user]="currentUser"></app-form-update-user-infos>
+                    </div>
+                    <div *ngSwitchCase="3">
+                        <div *ngIf="userReservations.length > 0; else noReservations">
+                            <h1>Mes réservations</h1>
+                            <div class="final-row">
+                                <h2>N° de réservation : 167923301</h2>
+                                <div class="col-lg-3" *ngFor="let reservation of userReservations">
+                                    <h2>DEPART</h2>
+                                    <h3>Paris CDG T2F</h3>
+                                    <p class="subtitle">{{reservation.date_departure}}</p>
+                                </div>
+                                <div class="col-lg-3" *ngFor="let reservation of userReservations">
+                                    <h2>RETOUR</h2>
+                                    <h3>Paris CDG T2F</h3>
+                                    <p class="subtitle">{{reservation.date_arrival}}</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h2 class="price">207,80 €</h2>
+                                    <img src="assets/golf-final.svg" width="150px">
+                                </div>
+                            </div>
+                        </div>
+                        <ng-template #noReservations>
+                            <p>Aucune réservation antérieure trouvée.</p>
+                            <img class="covered-car" src="assets/covered.png">
+                        </ng-template>
+                    </div>
+                    <div *ngSwitchCase="4">
+                        <app-form-update-user-password [user]="currentUser"></app-form-update-user-password>
+                    </div>
+                    <div *ngSwitchDefault>Aucun profil ne correspond, connectez vous !</div>
                 </div>
-                <div *ngSwitchCase="4">
-                    <app-form-update-user-password [user]="currentUser"></app-form-update-user-password>
-                </div>
-                <div *ngSwitchDefault>Aucun profil ne correspond, connectez vous !</div>
             </div>
         </div>
+        <div class="col-lg-1"></div>
     </div>
 </div>
