@@ -12,6 +12,17 @@ export class SearchComponent implements OnInit{
   stations: Station[] = [];
   homeImageUrl: string = 'assets/auto-home.svg';
 
+  isDisplayed : boolean = false;
+  isShowed : boolean = true
+
+  ShowOrHide() {
+    this.isDisplayed = !this.isDisplayed;
+  }
+
+  ShowOrHideField() {
+    this.isShowed = !this.isShowed;
+  }
+
   constructor(
       private searchService: SearchService
   ) { }
