@@ -1,4 +1,4 @@
-<div class="supplements">
+<!-- <div class="supplements">
     <div class="row">
         <div class="col-lg-4" *ngFor="let supplement of supplementsList">
             <img [src]="supplement.picture">
@@ -11,9 +11,9 @@
             <button appDisableOthers (click)="selectExtras(supplement.id)">Sélectionner</button>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="assurances">
+<!-- <div class="assurances">
     <div class="row">
         <div class="col-lg-4" *ngFor="let assurance of assurancesList">
             <h2>{{assurance.label}}</h2><br />
@@ -26,3 +26,31 @@
         </div>
     </div>
 </div>
+ -->
+
+ <form [formGroup]="assurancesForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let assurance of assurancesList; let i = index">
+            <h2>{{assurance.label}}</h2><br />
+            <strong>Caution : {{assurance.caution}} €</strong>
+            <div class="texte">
+                <p>Protections: {{assurance.protections.join(', ')}}</p>
+            </div>
+            <div class="prix">{{assurance.price}} € / Total</div>
+            <!-- Apply the directive to each checkbox -->
+            <input type="checkbox" [formControlName]="'assurance' + i" appDisableOthers>
+        </div>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+
+<p [appHighlight]="color">Highlight me!</p>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

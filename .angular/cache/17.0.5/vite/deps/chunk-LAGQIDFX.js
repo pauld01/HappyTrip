@@ -1,6 +1,6 @@
 import {
   withHttpTransferCache
-} from "./chunk-LZOUC6MN.js";
+} from "./chunk-DIPPOSFG.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -11,7 +11,7 @@ import {
   isPlatformServer,
   parseCookieValue,
   setRootDomAdapter
-} from "./chunk-ACM6NSF7.js";
+} from "./chunk-ER3K3KHR.js";
 import {
   APP_ID,
   ApplicationModule,
@@ -68,7 +68,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-5DGE23IB.js";
+} from "./chunk-JGL6IZFY.js";
 import {
   __spreadProps,
   __spreadValues
@@ -1896,7 +1896,7 @@ function provideClientHydration(...features) {
     /* HydrationFeatureKind.NoHttpTransferCache */
   ) || hasHttpTransferCacheOptions ? [] : withHttpTransferCache({}), providers]);
 }
-var VERSION = new Version("17.0.6");
+var VERSION = new Version("17.0.5");
 var makeStateKey2 = makeStateKey;
 var TransferState2 = TransferState;
 
@@ -1941,9 +1941,9 @@ export {
 
 @angular/platform-browser/fesm2022/platform-browser.mjs:
   (**
-   * @license Angular v17.0.6
+   * @license Angular v17.0.5
    * (c) 2010-2022 Google LLC. https://angular.io/
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-27PRGYLW.js.map
+//# sourceMappingURL=chunk-LAGQIDFX.js.map

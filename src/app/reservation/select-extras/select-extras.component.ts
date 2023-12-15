@@ -5,10 +5,14 @@ import {ReservationService} from "../../shared/services/reservation.service";
 import {NgForOf} from "@angular/common";
 import { ActivatedRoute } from '@angular/router';
 import { Supplement } from '../../shared/models/supplement';
+import { HighlightDirective } from '../../directives/highlight.directive';
+import { DisableOthersDirective } from '../../directives/disable-others.directive';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-select-extras',
   standalone: true,
-  imports: [NgForOf],
+  imports: [NgForOf,HighlightDirective,DisableOthersDirective,ReactiveFormsModule],
   templateUrl: './select-extras.component.html',
   styleUrl: './select-extras.component.scss'
 })
@@ -16,9 +20,9 @@ export class SelectExtrasComponent {
   @Input() assurancesList: Assurance[] = [];
   @Input() supplementsList: Supplement[] = [];
   @Input() reservation!: Reservation;
-
+  selectedAssuranceId: string | null = null;
   reservationId!: string | null;
-
+  color = 'yellow';
   constructor(
       private reservationService: ReservationService,
       private route: ActivatedRoute
@@ -29,7 +33,18 @@ export class SelectExtrasComponent {
         }
     );
   }
+  assurancesForm = new FormGroup({});
 
+  ngOnInit() {
+    this.assurancesList.forEach((assurance, index) => {
+      this.assurancesForm.addControl('assurance' + index, new FormControl(false));
+    });
+  }
+
+  onSubmit() {
+    console.log(this.assurancesForm.value);
+    // Process the selected assurances here
+  }
 
   selectExtras(supplementId: string) {
     if (!this.reservation.supplements) {
@@ -47,4 +62,7 @@ export class SelectExtrasComponent {
       this.reservationService.updateReservation(this.reservation);
     }
   }
+  
+
+  
 }

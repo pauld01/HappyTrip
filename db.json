@@ -241,11 +241,12 @@
     {
       "id": "1",
       "user": "3",
-      "vehicle": "2",
-      "assurance": "1",
+      "vehicle": "1",
+      "assurance": "2",
       "supplements": [
         "1",
-        "3"
+        "3",
+        "2"
       ],
       "station_departure": "1",
       "date_departure": "2023-12-13 08:15:00",
@@ -353,6 +354,66 @@
       "station_arrival": "1",
       "date_departure": "2023-12-16T19:28",
       "date_arrival": "2023-12-22T19:29"
+    },
+    {
+      "id": "16a95ceb-25fe-46b2-9252-7aa68428c7f6",
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": false,
+      "vehicle": "1",
+      "assurance": "",
+      "supplements": [],
+      "station_departure": "1",
+      "station_arrival": "1",
+      "date_departure": "2023-12-20T23:44",
+      "date_arrival": "2023-12-27T23:44"
+    },
+    {
+      "id": "2f12cfa4-acea-40ea-b79f-ca7c64c80bbe",
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": false,
+      "vehicle": "1",
+      "assurance": "",
+      "supplements": [],
+      "station_departure": "1",
+      "station_arrival": "1",
+      "date_departure": "2023-12-16T23:46",
+      "date_arrival": "2023-12-22T23:46"
+    },
+    {
+      "id": "d028c947-c898-4974-8f71-ded82d3f4081",
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": false,
+      "vehicle": "1",
+      "assurance": "",
+      "supplements": [],
+      "station_departure": "1",
+      "station_arrival": "1",
+      "date_departure": "2023-12-24T23:53",
+      "date_arrival": "2023-12-24T23:53"
     }
   ],
   "promotionCode": [

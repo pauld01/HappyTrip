@@ -5069,6 +5069,7 @@ function detachView(lContainer, removeIndex) {
 function destroyLView(tView, lView) {
   if (!(lView[FLAGS] & 256)) {
     const renderer = lView[RENDERER];
+    lView[REACTIVE_TEMPLATE_CONSUMER] && consumerDestroy(lView[REACTIVE_TEMPLATE_CONSUMER]);
     if (renderer.destroyNode) {
       applyView(tView, lView, renderer, 3, null, null);
     }
@@ -5079,7 +5080,6 @@ function cleanUpView(tView, lView) {
   if (!(lView[FLAGS] & 256)) {
     lView[FLAGS] &= ~128;
     lView[FLAGS] |= 256;
-    lView[REACTIVE_TEMPLATE_CONSUMER] && consumerDestroy(lView[REACTIVE_TEMPLATE_CONSUMER]);
     executeOnDestroys(tView, lView);
     processCleanups(tView, lView);
     if (lView[TVIEW].type === 1) {
@@ -6209,7 +6209,7 @@ var Version = class {
     this.patch = full.split(".").slice(2).join(".");
   }
 };
-var VERSION = new Version("17.0.6");
+var VERSION = new Version("17.0.5");
 var NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR = {};
 function isSignal(value) {
   return typeof value === "function" && value[SIGNAL] !== void 0;
@@ -11329,9 +11329,6 @@ function isFirstElementInNgContainer(tNode) {
 function getNoOffsetIndex(tNode) {
   return tNode.index - HEADER_OFFSET;
 }
-function isDisconnectedNode(tNode, lView) {
-  return !(tNode.type & 16) && !!lView[tNode.index] && !unwrapRNode(lView[tNode.index])?.isConnected;
-}
 function locateNextRNode(hydrationInfo, tView, lView, tNode) {
   let native = null;
   const noOffsetIndex = getNoOffsetIndex(tNode);
@@ -11458,13 +11455,10 @@ function calcPathBetween(from, to, fromNodeName) {
   return path === null ? null : compressNodeLocation(fromNodeName, path);
 }
 function calcPathForNode(tNode, lView) {
-  let parentTNode = tNode.parent;
+  const parentTNode = tNode.parent;
   let parentIndex;
   let parentRNode;
   let referenceNodeName;
-  while (parentTNode !== null && isDisconnectedNode(parentTNode, lView)) {
-    parentTNode = parentTNode.parent;
-  }
   if (parentTNode === null || !(parentTNode.type & 3)) {
     parentIndex = referenceNodeName = REFERENCE_NODE_HOST;
     parentRNode = lView[DECLARATION_COMPONENT_VIEW][HOST];
@@ -11756,7 +11750,7 @@ function getLViewFromLContainer(lContainer, index) {
   return void 0;
 }
 function shouldAddViewToDom(tNode, dehydratedView) {
-  return !dehydratedView || dehydratedView.firstChild === null || hasInSkipHydrationBlockFlag(tNode);
+  return !dehydratedView || hasInSkipHydrationBlockFlag(tNode);
 }
 function addLViewToLContainer(lContainer, lView, index, addToDOM = true) {
   const tView = lView[TVIEW];
@@ -11768,10 +11762,6 @@ function addLViewToLContainer(lContainer, lView, index, addToDOM = true) {
     if (parentRNode !== null) {
       addViewToDOM(tView, lContainer[T_HOST], renderer, lView, parentRNode, beforeNode);
     }
-  }
-  const hydrationInfo = lView[HYDRATION];
-  if (hydrationInfo !== null && hydrationInfo.firstChild !== null) {
-    hydrationInfo.firstChild = null;
   }
 }
 function removeLViewFromLContainer(lContainer, index) {
@@ -19905,7 +19895,6 @@ function serializeLView(lView, context) {
         }
       }
     }
-    conditionallyAnnotateNodePath(ngh, tNode, lView);
     if (isLContainer(lView[i])) {
       const embeddedTView = tNode.tView;
       if (embeddedTView !== null) {
@@ -19955,18 +19944,13 @@ function serializeLView(lView, context) {
             );
           }
         }
+        if (tNode.projectionNext && tNode.projectionNext !== tNode.next && !isInSkipHydrationBlock(tNode.projectionNext)) {
+          appendSerializedNodePath(ngh, tNode.projectionNext, lView);
+        }
       }
     }
   }
   return ngh;
-}
-function conditionallyAnnotateNodePath(ngh, tNode, lView) {
-  if (tNode.projectionNext && tNode.projectionNext !== tNode.next && !isInSkipHydrationBlock(tNode.projectionNext)) {
-    appendSerializedNodePath(ngh, tNode.projectionNext, lView);
-  }
-  if (tNode.prev === null && tNode.parent !== null && isDisconnectedNode(tNode.parent, lView) && !isDisconnectedNode(tNode, lView)) {
-    appendSerializedNodePath(ngh, tNode, lView);
-  }
 }
 function componentUsesShadowDomEncapsulation(lView) {
   const instance = lView[CONTEXT];
@@ -19998,6 +19982,9 @@ function isContentProjectedNode(tNode) {
     currentTNode = currentTNode.parent;
   }
   return false;
+}
+function isDisconnectedNode(tNode, lView) {
+  return !(tNode.type & 16) && !!lView[tNode.index] && !unwrapRNode(lView[tNode.index]).isConnected;
 }
 var isHydrationSupportEnabled = false;
 var APPLICATION_IS_STABLE_TIMEOUT = 1e4;
@@ -20646,14 +20633,14 @@ export {
 
 @angular/core/fesm2022/primitives/signals.mjs:
   (**
-   * @license Angular v17.0.6
+   * @license Angular v17.0.5
    * (c) 2010-2022 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/core/fesm2022/core.mjs:
   (**
-   * @license Angular v17.0.6
+   * @license Angular v17.0.5
    * (c) 2010-2022 Google LLC. https://angular.io/
    * License: MIT
    *)
@@ -20667,4 +20654,4 @@ export {
    * found in the LICENSE file at https://angular.io/license
    *)
 */
-//# sourceMappingURL=chunk-5DGE23IB.js.map
+//# sourceMappingURL=chunk-JGL6IZFY.js.map

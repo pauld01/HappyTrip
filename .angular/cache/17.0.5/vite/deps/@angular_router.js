@@ -1,7 +1,7 @@
 import {
   Title
-} from "./chunk-27PRGYLW.js";
-import "./chunk-LZOUC6MN.js";
+} from "./chunk-LAGQIDFX.js";
+import "./chunk-DIPPOSFG.js";
 import {
   DOCUMENT,
   HashLocationStrategy,
@@ -10,7 +10,7 @@ import {
   LocationStrategy,
   PathLocationStrategy,
   ViewportScroller
-} from "./chunk-ACM6NSF7.js";
+} from "./chunk-ER3K3KHR.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   APP_INITIALIZER,
@@ -77,7 +77,7 @@ import {
   ɵɵloadQuery,
   ɵɵqueryRefresh,
   ɵɵsanitizeUrlOrResourceUrl
-} from "./chunk-5DGE23IB.js";
+} from "./chunk-JGL6IZFY.js";
 import {
   BehaviorSubject,
   ConnectableObservable,
@@ -2639,9 +2639,6 @@ function matchWithChecks(segmentGroup, route, segments, injector, urlSerializer)
   return runCanMatchGuards(injector, route, segments, urlSerializer).pipe(map((v) => v === true ? result : __spreadValues({}, noMatch)));
 }
 function match(segmentGroup, route, segments) {
-  if (route.path === "**") {
-    return createWildcardMatchResult(segments);
-  }
   if (route.path === "") {
     if (route.pathMatch === "full" && (segmentGroup.hasChildren() || segments.length > 0)) {
       return __spreadValues({}, noMatch);
@@ -2670,15 +2667,6 @@ function match(segmentGroup, route, segments) {
     // TODO(atscott): investigate combining parameters and positionalParamSegments
     parameters,
     positionalParamSegments: res.posParams ?? {}
-  };
-}
-function createWildcardMatchResult(segments) {
-  return {
-    matched: true,
-    parameters: segments.length > 0 ? last2(segments).parameters : {},
-    consumedSegments: segments,
-    remainingSegments: [],
-    positionalParamSegments: {}
   };
 }
 function split(segmentGroup, consumedSegments, slicedSegments, config) {
@@ -2738,6 +2726,9 @@ function emptyPathMatch(segmentGroup, slicedSegments, r) {
 function isImmediateMatch(route, rawSegment, segments, outlet) {
   if (getOutlet(route) !== outlet && (outlet === PRIMARY_OUTLET || !emptyPathMatch(rawSegment, segments, route))) {
     return false;
+  }
+  if (route.path === "**") {
+    return true;
   }
   return match(rawSegment, route, segments).matched;
 }
@@ -2878,7 +2869,7 @@ var Recognizer = class {
       consumedSegments,
       positionalParamSegments,
       remainingSegments
-    } = match(segmentGroup, route, segments);
+    } = route.path === "**" ? createWildcardMatchResult(segments) : match(segmentGroup, route, segments);
     if (!matched)
       return noMatch$1(segmentGroup);
     if (route.redirectTo.startsWith("/")) {
@@ -2897,9 +2888,12 @@ This is currently a dev mode only error but will become a call stack size exceed
     }));
   }
   matchSegmentAgainstRoute(injector, rawSegment, route, segments, outlet) {
-    const matchResult = matchWithChecks(rawSegment, route, segments, injector, this.urlSerializer);
+    let matchResult;
     if (route.path === "**") {
+      matchResult = of(createWildcardMatchResult(segments));
       rawSegment.children = {};
+    } else {
+      matchResult = matchWithChecks(rawSegment, route, segments, injector, this.urlSerializer);
     }
     return matchResult.pipe(switchMap((result) => {
       if (!result.matched) {
@@ -3020,6 +3014,15 @@ function getData(route) {
 }
 function getResolve(route) {
   return route.resolve || {};
+}
+function createWildcardMatchResult(segments) {
+  return {
+    matched: true,
+    parameters: segments.length > 0 ? last2(segments).parameters : {},
+    consumedSegments: segments,
+    remainingSegments: [],
+    positionalParamSegments: {}
+  };
 }
 function recognize(injector, configLoader, rootComponentType, config, serializer, paramsInheritanceStrategy) {
   return mergeMap((t) => recognize$1(injector, configLoader, rootComponentType, config, t.extractedUrl, serializer, paramsInheritanceStrategy).pipe(map(({
@@ -5504,7 +5507,7 @@ function mapToCanDeactivate(providers) {
 function mapToResolve(provider) {
   return (...params) => inject(provider).resolve(...params);
 }
-var VERSION = new Version("17.0.6");
+var VERSION = new Version("17.0.5");
 export {
   ActivatedRoute,
   ActivatedRouteSnapshot,
@@ -5584,7 +5587,7 @@ export {
 
 @angular/router/fesm2022/router.mjs:
   (**
-   * @license Angular v17.0.6
+   * @license Angular v17.0.5
    * (c) 2010-2022 Google LLC. https://angular.io/
    * License: MIT
    *)
