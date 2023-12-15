@@ -27,8 +27,21 @@
     </div>
 </div>
  -->
+ <div id="assuranceGroup">
+    <div class="list-group-item" *ngFor="let assurance of assurancesList">
+      <input
+        type="checkbox"
+        [name]="assurance.id"
+        [id]="assurance.id"
+        [value]="assurance.id"
+        appDisableOtherCheckboxes="#assuranceGroup"
+      />
+      <label for="{{ assurance.id }}">{{ assurance.label }}</label>
+    </div>
+  </div>
+  
 
- <form [formGroup]="assurancesForm" (ngSubmit)="onSubmit()">
+ <!-- <form [formGroup]="assurancesForm" (ngSubmit)="onSubmit()">
     <div class="row">
         <div class="col-lg-4" *ngFor="let assurance of assurancesList; let i = index">
             <h2>{{assurance.label}}</h2><br />
@@ -37,13 +50,13 @@
                 <p>Protections: {{assurance.protections.join(', ')}}</p>
             </div>
             <div class="prix">{{assurance.price}} € / Total</div>
-            <!-- Apply the directive to each checkbox -->
+
             <input type="checkbox" [formControlName]="'assurance' + i" appDisableOthers>
         </div>
     </div>
     <button type="submit">Submit</button>
 </form>
-
+ -->
 
 <p [appHighlight]="color">Highlight me!</p>
 

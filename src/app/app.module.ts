@@ -20,6 +20,7 @@ import {SelectVehicleComponent} from "./reservation/select-vehicle/select-vehicl
 import {SelectExtrasComponent} from "./reservation/select-extras/select-extras.component";
 import {PayementComponent} from "./reservation/payement/payement.component";
 import { HighlightDirective } from './directives/highlight.directive';
+import { DisableOtherCheckboxesDirective } from './directives/disable-other-checkboxes';
 
 
 
@@ -49,7 +50,8 @@ import { HighlightDirective } from './directives/highlight.directive';
         SelectExtrasComponent,
         PayementComponent,
         HighlightDirective,
-        DisableOthersDirective
+        DisableOthersDirective,
+        DisableOtherCheckboxesDirective
     ],
   providers: [],
   bootstrap: [AppComponent]

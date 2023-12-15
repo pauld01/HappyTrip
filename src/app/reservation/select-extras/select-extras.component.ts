@@ -8,11 +8,12 @@ import { Supplement } from '../../shared/models/supplement';
 import { HighlightDirective } from '../../directives/highlight.directive';
 import { DisableOthersDirective } from '../../directives/disable-others.directive';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { DisableOtherCheckboxesDirective } from '../../directives/disable-other-checkboxes';
 
 @Component({
   selector: 'app-select-extras',
   standalone: true,
-  imports: [NgForOf,HighlightDirective,DisableOthersDirective,ReactiveFormsModule],
+  imports: [NgForOf,HighlightDirective,DisableOthersDirective,ReactiveFormsModule,DisableOtherCheckboxesDirective],
   templateUrl: './select-extras.component.html',
   styleUrl: './select-extras.component.scss'
 })
@@ -35,6 +36,21 @@ export class SelectExtrasComponent {
   }
   assurancesForm = new FormGroup({});
 
+  // Assuming checkedTickets should hold strings
+checkedTickets: string[] = [];
+
+onCheck(evt: string) {
+  const index = this.checkedTickets.indexOf(evt);
+  if (index === -1) {
+    this.checkedTickets.push(evt);
+  } else {
+    this.checkedTickets.splice(index, 1);
+  }
+  console.log(this.checkedTickets);
+}
+
+
+
   ngOnInit() {
     this.assurancesList.forEach((assurance, index) => {
       this.assurancesForm.addControl('assurance' + index, new FormControl(false));
@@ -46,13 +62,13 @@ export class SelectExtrasComponent {
     // Process the selected assurances here
   }
 
-  selectExtras(supplementId: string) {
-    if (!this.reservation.supplements) {
-      this.reservation.supplements = [];
-    }
-    this.reservation.supplements.push(supplementId as never);
-    this.reservationService.updateReservation(this.reservation);
-  }
+  // selectExtras(supplementId: string) {
+  //   if (!this.reservation.supplements) {
+  //     this.reservation.supplements = [];
+  //   }
+  //   this.reservation.supplements.push(supplementId as never);
+  //   this.reservationService.updateReservation(this.reservation);
+  // }
 
   
 
