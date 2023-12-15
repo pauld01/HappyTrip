@@ -57,14 +57,14 @@
                     <div *ngSwitchCase="3">
                         <div *ngIf="userReservations.length > 0; else noReservations">
                             <h1>Mes réservations</h1>
-                            <div class="final-row">
-                                <h2>N° de réservation : 167923301</h2>
-                                <div class="col-lg-3" *ngFor="let reservation of userReservations">
+                            <div class="final-row" *ngFor="let reservation of userReservations">
+                                <h2>N° de réservation : {{reservation.id}}</h2>
+                                <div class="col-lg-3">
                                     <h2>DEPART</h2>
                                     <h3>Paris CDG T2F</h3>
                                     <p class="subtitle">{{reservation.date_departure}}</p>
                                 </div>
-                                <div class="col-lg-3" *ngFor="let reservation of userReservations">
+                                <div class="col-lg-3">
                                     <h2>RETOUR</h2>
                                     <h3>Paris CDG T2F</h3>
                                     <p class="subtitle">{{reservation.date_arrival}}</p>
