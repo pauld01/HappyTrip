@@ -21,6 +21,9 @@ export class SearchComponent implements OnInit{
   searchForm!: FormGroup;
   currentUserId: String = "";
 
+  isDisplayed: boolean = false;
+  isShowed: boolean = false;
+
   constructor(
       private searchService: SearchService,
       private reservationService: ReservationService,
@@ -62,6 +65,14 @@ export class SearchComponent implements OnInit{
 
   onUtilitaireButtonClick(): void {
     this.homeImageUrl = 'assets/vw-transporter.png';
+  }
+
+  ShowOrHide() {
+    this.isDisplayed = !this.isDisplayed;
+  }
+
+  ShowOrHideField() {
+    this.isShowed = !this.isShowed;
   }
 
   createReservation() {
