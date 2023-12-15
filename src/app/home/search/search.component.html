@@ -19,7 +19,7 @@
                                 <option value="" selected>Station de départ</option>
                                 <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
                             </select>
-                            <select class="text-input" formControlName="station_arrival">
+                            <select class="text-input" formControlName="station_arrival" *ngIf="isShowed">
                                 <option value="" selected>Station de retour</option>
                                 <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
                             </select>

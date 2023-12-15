@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit{
   currentUserId: String = "";
 
   isDisplayed: boolean = false;
-  isShowed: boolean = false;
+  isShowed: boolean = true;
 
   constructor(
       private searchService: SearchService,
