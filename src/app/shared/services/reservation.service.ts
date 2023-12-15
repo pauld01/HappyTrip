@@ -17,12 +17,20 @@ export class ReservationService {
     return this.http.get('http://localhost:3000/reservation');
   }
 
+  getReservationsById(id :string){
+    return this.http.get('http://localhost:3000/reservation?id=' + id);
+  }
+
   getReservationsOfUser(user: User) {
     return this.http.get('http://localhost:3000/reservation?user=' + user.id);
   }
 
   addReservation(reservation: Reservation) {
-    return this.http.post('http://localhost:3000/reservation', reservation);
+    return this.http.post('http://localhost:3000/reservation', reservation).subscribe();
+  }
+
+  updateReservation(reservation: Reservation) {
+    return this.http.put<Reservation>('http://localhost:3000/reservation/'+reservation.id, reservation).subscribe();
   }
 
   getAssurances() {
@@ -31,6 +39,10 @@ export class ReservationService {
 
   getVehicles() {
     return this.http.get('http://localhost:3000/vehicle');
+  }
+
+  getVehicleById(id :string) {
+    return this.http.get('http://localhost:3000/vehicle?id=' + id);
   }
 
   getSupplements() {
