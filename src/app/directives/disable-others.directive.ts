@@ -1,20 +1,20 @@
-import { Directive, Input, ElementRef, Renderer2, OnInit, QueryList } from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appDisableOthers]'
 })
-export class DisableOthersDirective implements OnInit {
-  @Input() insuranceOptions!: QueryList<ElementRef>;
+export class DisableOthersDirective {
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
-  ngOnInit() {
-    this.el.nativeElement.addEventListener('change', () => {
-      this.insuranceOptions.forEach(option => {
-        if (option.nativeElement !== this.el.nativeElement) {
-          this.renderer.setProperty(option.nativeElement, 'disabled', this.el.nativeElement.checked);
-        }
-      });
-    });
+  @HostListener('change') onChange() {
+    const parent = this.el.nativeElement.parentNode;
+    const siblings = parent.children;
+    for (let i = 0; i < siblings.length; i++) {
+      const sibling = siblings[i];
+      if (sibling !== this.el.nativeElement) {
+        this.renderer.setProperty(sibling, 'disabled', this.el.nativeElement.checked);
+      }
+    }
   }
 }
