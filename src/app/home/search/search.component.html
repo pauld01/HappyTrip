@@ -13,7 +13,7 @@
                 <div class="container-search">
                     <form class="row" [formGroup]="searchForm" (ngSubmit)="createReservation()">
                         <div class="col-lg-7">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" (change)="ShowOrHideField()" type="checkbox" value="">
                             <p>Station de retour identique</p>
                             <select class="text-input" formControlName="station_departure">
                                 <option value="" selected>Station de départ</option>
@@ -24,8 +24,12 @@
                                 <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
                             </select>
                             <div class="bottom-input">
-                                <input class="form-check-input" type="checkbox" value="">
+                                <input class="form-check-input" (change)="ShowOrHide()" type="checkbox" value="">
                                 <p>Contrat entreprise négocié</p>
+                            </div>
+                            <div *ngIf="isDisplayed" class="enterprise-contract">
+                                <input type="text" class="text-input">
+                                <p>Max. 10 caractères</p>
                             </div>
                         </div>
                         <div class="col-lg-5">

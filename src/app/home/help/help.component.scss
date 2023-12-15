@@ -8,3 +8,58 @@
   padding: 30px;
   border-radius: 28px;
 }
+
+h1{
+  font-size: 20px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: rgb(20, 45, 119);
+}
+
+h2{
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p{
+  margin-top: 0px;
+  margin-bottom: 26px;
+}
+
+.col-lg-7, .col-lg-4{
+  h1{
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: rgb(20, 45, 119);
+    }
+}
+
+.box{
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  p{
+      margin-top: 26px;
+      margin-bottom: 26px;
+  }
+  button{
+      border: none;
+      border-radius : 8px;
+      background-color: rgb(234, 210, 0);
+      padding: 8px 30px 8px 30px ;
+      color: rgb(255, 255, 255);
+      font-weight: 500;
+      width: 200px;
+      color: rgb(0, 0, 0);
+      margin-top: 60px;
+      margin-left: 20%;
+      a{
+          text-decoration: none;
+          color: black;
+      }
+  }
+}

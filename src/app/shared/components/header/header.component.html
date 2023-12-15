@@ -3,6 +3,7 @@
         <img routerLink="" src="assets/logo.svg" alt="logo">
         <div class="shortcuts">
             <a *ngIf="!isUserConnected" href="/login">Connexion</a>
+            <a *ngIf="isUserConnected" (click)="logout()">Déconnexion</a>
             <a href="">France</a>
             <a href="/aide">Aide</a>
             <a *ngIf="isUserConnected" href="/profile">Profil</a>
