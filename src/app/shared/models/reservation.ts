@@ -2,10 +2,10 @@ import {User} from "./user";
 
 export class Reservation {
     id: string = crypto.randomUUID();
-    user: String;
+    user: string;
     vehicle: string;
     assurance: string;
-    supplements: [];
+    supplements: string[];
     station_departure: string;
     station_arrival: string;
     date_departure: string;
@@ -19,7 +19,7 @@ export class Reservation {
     }];
     payment: boolean = false;
 
-    constructor(userId: String, vehicleId: string, assuranceId: string, supplements: [], station_departure: string, station_arrival: string, date_departure: string, date_arrival: string) {
+    constructor(userId: string, vehicleId: string, assuranceId: string, supplements: string[], station_departure: string, station_arrival: string, date_departure: string, date_arrival: string) {
         this.user = userId;
         this.vehicle = vehicleId;
         this.assurance = assuranceId;
