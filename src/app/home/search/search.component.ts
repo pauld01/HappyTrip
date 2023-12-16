@@ -22,9 +22,6 @@ export class SearchComponent implements OnInit{
   searchForm!: FormGroup;
   currentUserId: string = "";
 
-  isDisplayed: boolean = false;
-  isShowed: boolean = true;
-
   constructor(
       private searchService: SearchService,
       private reservationService: ReservationService,
@@ -58,14 +55,6 @@ export class SearchComponent implements OnInit{
       date_departure: new FormControl('', Validators.required),
       date_arrival: new FormControl('', Validators.required)
     });
-  }
-
-  ShowOrHide() {
-    this.isDisplayed = !this.isDisplayed;
-  }
- 
-  ShowOrHideField() {
-    this.isShowed = !this.isShowed;
   }
 
   onAutoButtonClick(): void {
