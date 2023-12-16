@@ -17,7 +17,8 @@ export class SearchComponent implements OnInit{
   ages: number[] = [18, 19, 20, 21, 22, 23, 24];
   stations: Station[] = [];
   homeImageUrl: string = 'assets/auto-home.svg';
-
+  isDisplayed : boolean = false ;
+  isShowed : boolean = true ;
   searchForm!: FormGroup;
   currentUserId: string = "";
 
@@ -57,6 +58,14 @@ export class SearchComponent implements OnInit{
       date_departure: new FormControl('', Validators.required),
       date_arrival: new FormControl('', Validators.required)
     });
+  }
+
+  ShowOrHide() {
+    this.isDisplayed = !this.isDisplayed;
+  }
+ 
+  ShowOrHideField() {
+    this.isShowed = !this.isShowed;
   }
 
   onAutoButtonClick(): void {
