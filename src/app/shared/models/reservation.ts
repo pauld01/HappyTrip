@@ -28,5 +28,6 @@ export class Reservation {
         this.station_arrival = station_arrival;
         this.date_departure = date_departure;
         this.date_arrival = date_arrival;
+        
     }
 }

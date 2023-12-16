@@ -512,12 +512,32 @@
       ],
       "payment": false,
       "vehicle": "2",
-      "assurance": "",
+      "assurance": "3",
       "supplements": [],
       "station_departure": "1",
       "station_arrival": "1",
       "date_departure": "2023-12-29T01:05",
       "date_arrival": "2023-12-31T01:05"
+    },
+    {
+      "id": "c129d8fe-303a-4a40-919d-a9d33bb3543f",
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": false,
+      "vehicle": "1",
+      "assurance": "",
+      "supplements": [],
+      "station_departure": "1",
+      "station_arrival": "1",
+      "date_departure": "2023-12-22T01:21",
+      "date_arrival": "2023-12-31T01:21"
     }
   ],
   "promotionCode": [
