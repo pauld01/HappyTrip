@@ -1,6 +1,5 @@
 <div id="assuranceGroup" class="container mt-4">
     <div class="row">
-      <!-- Loop through each assurance -->
       <div class="col-lg-4 mb-4" *ngFor="let assurance of assurancesList">
         <div class="card">
           <div class="card-body">
@@ -25,7 +24,6 @@
   
   <div id="supplementsGroup" class="container mt-4">
     <div class="row">
-      <!-- Loop through each supplement -->
       <div class="col-lg-4 mb-4" *ngFor="let supplement of supplementsList">
         <div class="card">
           <div class="card-body">
@@ -49,7 +47,7 @@
   
   
   <div class="text-center mt-4">
-    <button class="btn btn-primary" (click)="updateAssurancesAndSupplements()">Update Assurances and Supplements</button>
+    <button class="btn btn-primary" (click)="goToNextStep()">Passer au paiement</button>
   </div>
 
 <!-- <div class="global-content">

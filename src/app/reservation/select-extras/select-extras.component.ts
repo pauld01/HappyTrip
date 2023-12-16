@@ -43,7 +43,7 @@ export class SelectExtrasComponent {
 }
 
 
-  updateAssurancesAndSupplements() {
+  goToNextStep() {
     this.selectAssurance();
     this.selectSupplement();
   }

@@ -39,11 +39,7 @@ export class PayementComponent {
   submitReservation() {
       const isCardNumberValid = this.validateCardNumber(this.cardNumber);
       const isExpiryDateValid = this.validateExpiryDate(this.expiryDate);
-      // Since you want to remove CVV validation, we will not check it here
       if (isCardNumberValid && isExpiryDateValid) {
-        console.log(`Expiry Date: ${this.reservationId}`);
-          console.log('Card details are valid. Proceeding with reservation.');
-          console.log(`Card Number: ${this.cardNumber}, Expiry Date: ${this.expiryDate}`);
           this.updatePayment();
       } else {
           console.error('Invalid card details.');
