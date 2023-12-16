@@ -53,7 +53,12 @@ export class PayementComponent {
   }
 
   updatePayment() {
-    this.reservation.payment = true;
-    this.reservationService.updateReservation(this.reservation);
+    if (this.reservation) {
+      this.reservation.payment = true;
+      this.reservationService.updateReservation(this.reservation);
+    } else {
+      console.error('Reservation object is undefined.');
+    }
   }
+  
 }

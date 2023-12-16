@@ -530,8 +530,8 @@
           "phone": ""
         }
       ],
-      "payment": false,
-      "vehicle": "1",
+      "payment": true,
+      "vehicle": "3",
       "assurance": "",
       "supplements": [],
       "station_departure": "1",

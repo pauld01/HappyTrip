@@ -95,4 +95,4 @@
 
 <app-select-vehicle *ngIf="currentStep == 2" (click)="currentStep=3" [vehicleList]="vehicles" [reservation]="reservation"></app-select-vehicle>
 <app-select-extras *ngIf="currentStep == 3" [assurancesList]="assurances" [supplementsList]="supplements" [reservation]="reservation"></app-select-extras>
-<app-payement *ngIf="currentStep == 4"></app-payement>
+<app-payement *ngIf="currentStep == 4" [reservation]="reservation"></app-payement>
