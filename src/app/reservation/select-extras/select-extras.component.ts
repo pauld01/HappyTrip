@@ -38,6 +38,7 @@ export class SelectExtrasComponent {
 
   // Assuming checkedTickets should hold strings
 checkedTickets: string[] = [];
+selectedSupplementId: string | null = null;
 
 onCheck(evt: string) {
   const index = this.checkedTickets.indexOf(evt);
@@ -52,16 +53,42 @@ onCheck(evt: string) {
 
 
   ngOnInit() {
-    this.assurancesList.forEach((assurance, index) => {
-      this.assurancesForm.addControl('assurance' + index, new FormControl(false));
-    });
+    // this.assurancesList.forEach((assurance, index) => {
+    //   this.assurancesForm.addControl('assurance' + index, new FormControl(false));
+    // });
   }
 
   onSubmit() {
     console.log(this.assurancesForm.value);
     // Process the selected assurances here
   }
+  updateAssurancesAndSupplements() {
+    this.selectAssurance();
+    this.selectSupplement();
+  }
 
+  private selectAssurance() {
+    if (this.selectedAssuranceId) {
+      this.reservation.assurance = this.selectedAssuranceId;
+      this.reservationService.updateReservation(this.reservation);
+    }
+  }
+
+  private selectSupplement() {
+    if (this.selectedSupplementId) {
+      this.reservation.supplements.push(this.selectedSupplementId as never);
+      this.reservationService.updateReservation(this.reservation);
+    }
+  }
+  
+
+  onAssuranceSelected(id: string) {
+    this.selectedAssuranceId = id;
+  }
+
+  onSupplementSelected(id: string) {
+    this.selectedSupplementId = id;
+  }
   // selectExtras(supplementId: string) {
   //   if (!this.reservation.supplements) {
   //     this.reservation.supplements = [];
@@ -72,12 +99,12 @@ onCheck(evt: string) {
 
   
 
-  selectAssurance(idAssurance: string | null) {
-    if (idAssurance) {
-      this.reservation.assurance = idAssurance;
-      this.reservationService.updateReservation(this.reservation);
-    }
-  }
+  // selectAssurance(idAssurance: string | null) {
+  //   if (idAssurance) {
+  //     this.reservation.assurance = idAssurance;
+  //     this.reservationService.updateReservation(this.reservation);
+  //   }
+  // }
   
 
   

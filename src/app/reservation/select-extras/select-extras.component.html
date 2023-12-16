@@ -27,18 +27,60 @@
     </div>
 </div>
  -->
- <div id="assuranceGroup">
-    <div class="list-group-item" *ngFor="let assurance of assurancesList">
-      <input
-        type="checkbox"
-        [name]="assurance.id"
-        [id]="assurance.id"
-        [value]="assurance.id"
-        appDisableOtherCheckboxes="#assuranceGroup"
-      />
-      <label for="{{ assurance.id }}">{{ assurance.label }}</label>
+ <div id="assuranceGroup" class="container mt-4">
+    <div class="row">
+      <!-- Loop through each assurance -->
+      <div class="col-lg-4 mb-4" *ngFor="let assurance of assurancesList">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{assurance.label}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Caution: {{assurance.caution}} €</h6>
+            <p class="card-text">Protections: {{assurance.protections.join(', ')}}</p>
+            <div class="text-right">
+              <span class="badge badge-primary">{{assurance.price}} €</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <input type="checkbox" 
+                   [id]="assurance.id" 
+                   (change)="onAssuranceSelected(assurance.id)" 
+                   appDisableOtherCheckboxes="#assuranceGroup">
+            <label for="{{ assurance.id }}" class="ml-2">Select</label>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  
+  <div id="supplementsGroup" class="container mt-4">
+    <div class="row">
+      <!-- Loop through each supplement -->
+      <div class="col-lg-4 mb-4" *ngFor="let supplement of supplementsList">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{supplement.label}}</h5>
+            <p class="card-text">{{supplement.description}}</p>
+            <div class="text-right">
+              <span class="badge badge-secondary">{{supplement.price}} €</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <input type="checkbox" 
+                   [id]="supplement.id" 
+                   (change)="onSupplementSelected(supplement.id)" 
+                   appDisableOtherCheckboxes="#supplementsGroup">
+            <label for="{{ supplement.id }}" class="ml-2">Select</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="text-center mt-4">
+    <button class="btn btn-primary" (click)="updateAssurancesAndSupplements()">Update Assurances and Supplements</button>
+  </div>
+  
   
 
  <!-- <form [formGroup]="assurancesForm" (ngSubmit)="onSubmit()">
