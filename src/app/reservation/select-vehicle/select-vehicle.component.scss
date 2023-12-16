@@ -6,6 +6,9 @@
     background-color: rgb(255, 255, 255);
     padding: 2%;
     border-radius: 12px;
+    h2{
+      font-size: 26px;
+    }
   }
   .assur-content{
     background-color: rgb(255, 255, 255);
@@ -22,7 +25,7 @@
     font-weight: 600;
   }
   .filter{
-    p, svg, button {
+    p, svg {
       display: inline;
       color: rgb(134, 134, 134);
       margin-bottom: 8px;
@@ -37,13 +40,6 @@
       margin-left: 4px;
       margin-right: 9%;
       margin-top: 8px;
-    }
-    .filter-button{
-      border-radius: 6px;
-      background-color: rgb(20, 45, 119);
-      color: rgb(255, 255, 255);
-      border: solid 1px;
-      border-color: rgb(20, 45, 119);
     }
   }
 }
@@ -69,10 +65,11 @@ table {
     border-radius: 10px;
     width: fit-content;
     margin-bottom: 20px;
+    padding: 2px;
+    padding-left: 6px;
     svg{
       cursor: pointer;
       margin-left: 10px;
-      padding: 2px;
       width: 18px;
     }
   }
@@ -85,6 +82,8 @@ table {
     p{
       display: inline;
       margin-right: 14px;
+      font-size: 12px;
+      padding-left: 4px;
     }
   }
   .inclusive{
@@ -92,13 +91,15 @@ table {
       margin-bottom: 10px;
     }
     p{
+      margin-left: 6px;
+      font-size: 12px;
       display: inline-block;
     }
   }
 
   .last{
     padding-right: 10px;
-    padding-left: 170px;
+    padding-left: 160px;
     text-align: end;
     .before-price{
       font-size: 10px;
@@ -110,6 +111,7 @@ table {
       font-size: 22px;
       margin: 0;
       padding: 0;
+      font-weight: 600;
     }
     button{
       margin-top: 16px;
