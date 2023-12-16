@@ -129,5 +129,9 @@ export class ReservationComponent implements OnInit{
             }
         );
     }
+
+    goToNextOnglet() {
+        this.currentStep = 4;
+    }
 }
 

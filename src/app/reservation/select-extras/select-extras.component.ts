@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Assurance} from "../../shared/models/assurance";
 import {NgForOf, NgIf} from "@angular/common";
 import {Reservation} from "../../shared/models/reservation";
@@ -23,6 +23,8 @@ import { DisableOthersDirective } from '../../directives/disable-others.directiv
   styleUrl: './select-extras.component.scss'
 })
 export class SelectExtrasComponent {
+  @Output() changeOnglet: EventEmitter<void> = new EventEmitter<void>();
+
   @Input() assurancesList: Assurance[] = [];
   @Input() supplementsList: Supplement[] = [];
   @Input() reservation!: Reservation;
@@ -30,7 +32,6 @@ export class SelectExtrasComponent {
   selectedSupplementId: string | null = null;
   reservationId!: string | null;
   assurancesForm = new FormGroup({});
-  //selectedExtras: string[] = [];
   constructor(
     private reservationService: ReservationService,
     private route: ActivatedRoute
@@ -42,10 +43,10 @@ export class SelectExtrasComponent {
   );
 }
 
-
   goToNextStep() {
     this.selectAssurance();
     this.selectSupplement();
+    this.changeOnglet.emit();
   }
 
   private selectAssurance() {
@@ -61,7 +62,6 @@ export class SelectExtrasComponent {
       this.reservationService.updateReservation(this.reservation);
     }
   }
-  
 
   onAssuranceSelected(id: string) {
     this.selectedAssuranceId = id;
@@ -70,17 +70,4 @@ export class SelectExtrasComponent {
   onSupplementSelected(id: string) {
     this.selectedSupplementId = id;
   }
-  // toggleExtraSelection(extraId: string): void {
-  //   const index = this.selectedExtras.indexOf(extraId);
-  //   if (index === -1) { this.selectedExtras.push(extraId); }
-  //   else { this.selectedExtras.splice(index, 1); }
-  // }
-
-  // goToNextStep() {
-  //   this.reservation.supplements = this.selectedExtras;
-  //   this.reservationService.updateReservation(this.reservation);
-  // }
-
-
-
 }
