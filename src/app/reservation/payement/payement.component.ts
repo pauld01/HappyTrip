@@ -71,16 +71,24 @@ export class PayementComponent implements OnInit{
   }
 
   getTotalPrice(){
-      const departureDateTime = new Date(this.reservation.date_departure);
-      const arrivalDateTime = new Date(this.reservation.date_arrival);
+    const departureDateTime = new Date(this.reservation.date_departure);
+    const arrivalDateTime = new Date(this.reservation.date_arrival);
 
-      const daysDifference = Math.ceil((arrivalDateTime.getTime() - departureDateTime.getTime()) / (1000 * 3600 * 24));
+    const daysDifference = Math.ceil((arrivalDateTime.getTime() - departureDateTime.getTime()) / (1000 * 3600 * 24));
 
-      // Calcule le prix total
-      this.totalPrice = daysDifference * 42;
+    const vehicle = this.vehicleList.find(vehicle => vehicle.id === this.reservation.vehicle);
+    this.totalPrice = daysDifference * (vehicle?.price || 0);
 
-
-      console.log(this.reservation);
+    const insurance = this.assurancesList.find(assurance => assurance.id === this.reservation.assurance);
+    if (insurance) {
+      this.totalPrice += (insurance.price || 0) * daysDifference;
+    }
+    const supplements = this.supplementsList.filter(supplement => this.reservation.supplements.includes(supplement.id));
+    supplements.forEach(supplement => {
+      this.totalPrice += supplement.price || 0;
+    });
+    this.totalPrice = parseFloat(this.totalPrice.toFixed(2));
+    console.log(this.reservation);
   }
   
 }
