@@ -30,7 +30,6 @@ export class SelectExtrasComponent {
   selectedSupplementId: string | null = null;
   reservationId!: string | null;
   assurancesForm = new FormGroup({});
-  //selectedExtras: string[] = [];
   constructor(
     private reservationService: ReservationService,
     private route: ActivatedRoute
@@ -61,7 +60,6 @@ export class SelectExtrasComponent {
       this.reservationService.updateReservation(this.reservation);
     }
   }
-  
 
   onAssuranceSelected(id: string) {
     this.selectedAssuranceId = id;
@@ -70,17 +68,4 @@ export class SelectExtrasComponent {
   onSupplementSelected(id: string) {
     this.selectedSupplementId = id;
   }
-  // toggleExtraSelection(extraId: string): void {
-  //   const index = this.selectedExtras.indexOf(extraId);
-  //   if (index === -1) { this.selectedExtras.push(extraId); }
-  //   else { this.selectedExtras.splice(index, 1); }
-  // }
-
-  // goToNextStep() {
-  //   this.reservation.supplements = this.selectedExtras;
-  //   this.reservationService.updateReservation(this.reservation);
-  // }
-
-
-
 }
