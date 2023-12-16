@@ -18,7 +18,9 @@
       <input type="text" class="form-control" id="cvv" [(ngModel)]="cvv" name="cvv">
     </div>
     <button type="submit" class="btn btn-primary">Envoyer</button>
-    <div *ngIf="paymentSuccess" class="alert alert-success">
-      Paiement effectué avec succès.
-    </div>
+<!-- Success Message with Date Appended -->
+<div *ngIf="paymentSuccess" class="alert alert-success">
+  {{ 'Payment successful! Your reservation has been updated.' | addDatePayment }}
+</div>
+
   </form>

@@ -5,11 +5,12 @@ import { ReservationService } from '../../shared/services/reservation.service';
 import { ActivatedRoute } from '@angular/router';
 import { Reservation } from '../../shared/models/reservation';
 import { CommonModule } from '@angular/common';
+import { AddDatePaymentPipe } from '../../shared/pipes/add-date-payment.pipe';
 
 @Component({
   selector: 'app-payement',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,AddDatePaymentPipe],
   templateUrl: './payement.component.html',
   styleUrl: './payement.component.scss'
 })
