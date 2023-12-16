@@ -18,12 +18,12 @@
                 <div class="col-lg-3" *ngFor="let assurance of assurances" (click)="selectAssurance(assurance.id)">
                     <h2>{{assurance.label}}</h2>
                     <ng-container *ngIf="assurance.caution !== undefined && assurance.caution !== null && assurance.caution !== 0; else noFranchise">
-                        {{ assurance.caution }} € / Jours
+                        Caution : {{ assurance.caution }},00 €
                     </ng-container>
                     <ng-template #noFranchise>Pas de franchise</ng-template>
                     <p class="tarif">
                         <ng-container *ngIf="assurance.price !== undefined && assurance.price !== null && assurance.price !== 0; else noPrice">
-                            {{ assurance.price }} €
+                            {{ assurance.price }} € / Jour
                         </ng-container>
                         <ng-template #noPrice>Inclus</ng-template>
                     </p>
