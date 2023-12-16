@@ -80,6 +80,9 @@
       .row{
         border: none;
       }
+      .card{
+        border-radius: 12px;
+      }
       .card:hover{
         transform: scale(1.03);
         border-color: rgb(19, 55, 149);
@@ -94,6 +97,22 @@
       }
       h6{
         text-align: center;
+      }
+      li{
+        text-align: left;
+        font-size: 12px;
+        margin-top: 6px;
+      }
+      .include{
+        color: black;
+        list-style-image: url(../../../assets/yes.svg);
+        margin-left: 4px;
+        margin-bottom: 26px;
+        margin-top: 30px;
+      }
+      .not-include{
+        color: rgb(134, 134, 134);
+        list-style-image: url(../../../assets/no.svg);
       }
 
       .col-lg-3{
@@ -129,22 +148,6 @@
           padding-left: 0%;
           margin-top: 26px;
         }
-        li{
-          text-align: left;
-          font-size: 12px;
-          margin-top: 6px;
-        }
-        .include{
-          color: black;
-          list-style-image: url(../../../assets/yes.svg);
-          margin-left: 4px;
-          margin-bottom: 26px;
-        }
-        .not-include{
-          color: rgb(134, 134, 134);
-          list-style-image: url(../../../assets/no.svg);
-        }
-  
       }
     }
     .supplements{

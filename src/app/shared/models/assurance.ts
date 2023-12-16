@@ -5,4 +5,6 @@ export class Assurance {
     price?: number;
     caution?: number;
     protections: number[] = [];
+    include: number[] = [];
+    absent: number[] = [];
 }

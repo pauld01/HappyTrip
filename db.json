@@ -138,10 +138,15 @@
       "id": "1",
       "label": "Basic",
       "caution": 1200,
-      "protections": [
-        "1",
-        "2",
-        "3"
+      "include": [
+        "Protection en cas de collision",
+        "Protection en cas de vol",
+        "Protection en cas de vandalisme"
+      ],
+      "absent": [
+        "Protection contre les dégâts au pare-brise, vitres, projecteurs et pneus",
+        "Protection des occupants en cas d'accident",
+        "Protection des biens à l'intérieur du véhicule"
       ]
     },
     {
@@ -149,25 +154,27 @@
       "label": "Médium",
       "price": 20,
       "caution": 520,
-      "protections": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
+      "include": [
+        "Protection en cas de collision",
+        "Protection en cas de vol",
+        "Protection en cas de vandalisme",
+        "Protection contre les dégâts au pare-brise, vitres, projecteurs et pneus"
+      ],
+      "absent": [
+        "Protection des occupants en cas d'accident"
       ]
     },
     {
       "id": "3",
-      "label": "Prenium",
+      "label": "Premium",
       "price": 24,
-      "protections": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
+      "include": [
+        "Protection en cas de collision",
+        "Protection en cas de vol",
+        "Protection en cas de vandalisme",
+        "Protection contre les dégâts au pare-brise, vitres, projecteurs et pneus",
+        "Protection des occupants en cas d'accident",
+        "Protection des biens à l'intérieur du véhicule"
       ]
     }
   ],
@@ -274,10 +281,11 @@
         }
       ],
       "payment": false,
-      "vehicle": "2",
-      "assurance": "2",
+      "vehicle": "1",
+      "assurance": "1",
       "supplements": [
         "5",
+        "3",
         "3"
       ],
       "station_departure": "1",
