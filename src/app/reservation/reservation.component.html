@@ -36,7 +36,7 @@
                                 <h3>VEHICULE</h3>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <p>{{ vehicleInformations?.long_name ?? '' }}</p>
+                                        <p>{{ vehicleInformations.long_name ?? '' }}</p>
                                         <h5 class="price"></h5> <!-- TODO gerer le calcul du prix -->
                                     </div>
                                 </div>
@@ -94,5 +94,5 @@
 </div>
 
 <app-select-vehicle *ngIf="currentStep == 2" (click)="currentStep=3" [vehicleList]="vehicles" [reservation]="reservation"></app-select-vehicle>
-<app-select-extras *ngIf="currentStep == 3"></app-select-extras>
+<app-select-extras *ngIf="currentStep == 3" [assurances]="assurances" [reservation]="reservation" [extras]="supplements"></app-select-extras>
 <app-payement *ngIf="currentStep == 4"></app-payement>

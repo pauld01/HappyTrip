@@ -204,7 +204,7 @@
       "subLabel": "24h/24 & 7j/7",
       "description": "Bénéficiez d’une assistance routière et d’un dépannage sans frais en cas de panne ou d’accident lors de votre voyage.",
       "price": 18,
-      "picture": "assets/supplements/1"
+      "picture": "assets/attention.png"
     },
     {
       "id": "2",
@@ -212,7 +212,7 @@
       "subLabel": "Protégez vos passagers en cas d’accident",
       "description": "Protégez vos occupants grâce à notre assurance. Cette dernière couvre vos occupants en cas d’accident.",
       "price": 26,
-      "picture": "assets/supplements/2"
+      "picture": "assets/protection.png"
     },
     {
       "id": "3",
@@ -220,7 +220,7 @@
       "subLabel": "Protégez vos passagers et le contenu du véhicule",
       "description": "Protégez vos occupants et vos équipements grâce à notre assurance. Cette dernière couvre vos occupants en cas d’accident, et vos équipements personnels en cas de vol.",
       "price": 34,
-      "picture": "assets/supplements/3"
+      "picture": "assets/protection.png"
     },
     {
       "id": "4",
@@ -228,13 +228,13 @@
       "subLabel": "Protégez votre véhicule contre des dégâts",
       "description": "Assurez votre véhicule contre les dégâts causés par vous ou par autrui. Le pare-brise, les vitres, projecteurs et pneus sont couverts.",
       "price": 31.4,
-      "picture": "assets/supplements/4"
+      "picture": "assets/pneu.png"
     },
     {
       "id": "5",
       "label": "Jeune conducteur",
       "price": 79.82,
-      "picture": "assets/supplements/5"
+      "picture": "assets/jeune.png"
     }
   ],
   "reservation": [
@@ -274,9 +274,12 @@
         }
       ],
       "payment": false,
-      "vehicle": "3",
-      "assurance": "",
-      "supplements": [],
+      "vehicle": "2",
+      "assurance": "2",
+      "supplements": [
+        "5",
+        "3"
+      ],
       "station_departure": "1",
       "station_arrival": "1",
       "date_departure": "2023-12-14T21:26",

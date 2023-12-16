@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit{
   isDisplayed : boolean = false ;
   isShowed : boolean = true ;
   searchForm!: FormGroup;
-  currentUserId: String = "";
+  currentUserId: string = "";
 
   isDisplayed: boolean = false;
   isShowed: boolean = true;
@@ -89,7 +89,7 @@ export class SearchComponent implements OnInit{
     const newReservation = new Reservation(
         this.currentUserId,
         "",
-        "",
+        "1", //par défaut basic
         [],
         this.searchForm.value.station_departure,
         this.searchForm.value.station_arrival,
