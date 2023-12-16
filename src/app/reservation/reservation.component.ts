@@ -96,12 +96,15 @@ export class ReservationComponent implements OnInit{
     }
 
     getVehiculeInformations(){
-        this.vehicle =  this.reservationService.getVehicleById(this.reservation.vehicle).pipe(
-            map((vehicle: any) => (vehicle && vehicle.length > 0) ? vehicle : undefined)
-        );
+      if(this.reservation.vehicle != "") {
+          this.vehicle =  this.reservationService.getVehicleById(this.reservation.vehicle).pipe(
+              map((vehicle: any) => (vehicle && vehicle.length > 0) ? vehicle : undefined)
+          );
 
-        this.vehicle.subscribe((vehicule: Vehicle) => {
-            this.vehicleInformations = vehicule
-        });
+          this.vehicle.subscribe((vehicule: Vehicle) => {
+              this.vehicleInformations = vehicule
+          });
+      }
+
     }
 }

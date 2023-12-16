@@ -77,7 +77,7 @@ export class SearchComponent implements OnInit{
     if (this.searchForm.invalid){ return; }
     const newReservation = new Reservation(
         this.currentUserId,
-        "",
+        "1",
         "1", //par défaut basic
         [],
         this.searchForm.value.station_departure,
