@@ -19,6 +19,7 @@ import {FormUpdateUserPasswordComponent} from "./profile/form-update-user-passwo
 import {SelectVehicleComponent} from "./reservation/select-vehicle/select-vehicle.component";
 import {SelectExtrasComponent} from "./reservation/select-extras/select-extras.component";
 import {PayementComponent} from "./reservation/payement/payement.component";
+import { DisableOtherCheckboxesDirective } from './directives/disable-other-checkboxes';
 
 
 
@@ -33,7 +34,7 @@ import {PayementComponent} from "./reservation/payement/payement.component";
         LoginComponent,
         RegisterComponent,
         SearchComponent,
-        DisableOthersDirective
+        
     ],
     imports: [
         BrowserModule,
@@ -47,6 +48,8 @@ import {PayementComponent} from "./reservation/payement/payement.component";
         SelectVehicleComponent,
         SelectExtrasComponent,
         PayementComponent,
+        DisableOthersDirective,
+        DisableOtherCheckboxesDirective
     ],
   providers: [],
   bootstrap: [AppComponent]

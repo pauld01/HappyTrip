@@ -42,6 +42,7 @@ export class ReservationComponent implements OnInit{
                       this.reservation = reservation[0];
                       this.getStationNames();
                       this.getVehiculeInformations();
+                      this.getSupplementAndAssuranceNames();
                   },
                   (error) => {
                       console.error('Une erreur s\'est produite :', error);
@@ -107,4 +108,26 @@ export class ReservationComponent implements OnInit{
       }
 
     }
+
+
+    getSupplementAndAssuranceNames(){
+        this.reservationService.getSupplements().subscribe(
+            (supplements: any) => {
+                this.supplements = supplements;
+            },
+            (error) => {
+                console.error('Une erreur s\'est produite :', error);
+            }
+        );
+
+        this.reservationService.getAssurances().subscribe(
+            (assurances: any) => {
+                this.assurances = assurances;
+            },
+            (error) => {
+                console.error('Une erreur s\'est produite :', error);
+            }
+        );
+    }
 }
+
