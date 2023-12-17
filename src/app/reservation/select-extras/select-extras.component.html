@@ -22,27 +22,19 @@
               <div class="card-body">
                 <h5 class="card-title">{{assurance.label}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Caution: {{assurance.caution}} €</h6>
-                <div class="include">
+                
                   <ul>
-                    <li>{{assurance.include[0]}}</li>
-                    <li>{{assurance.include[1]}}</li>
-                    <li>{{assurance.include[2]}}</li>
-                    <li>{{assurance.include[3]}}</li>
-                    <li>{{assurance.include[4]}}</li>
-                    <li>{{assurance.include[5]}}</li>
+                    <li class="include">{{assurance.include[0]}}</li>
+                    <li class="include">{{assurance.include[1]}}</li>
+                    <li class="include">{{assurance.include[2]}}</li>
+                    <li class="include">{{assurance.include[3]}}</li>
+                    <li class="include">{{assurance.include[4]}}</li>
+                    <li class="include">{{assurance.include[5]}}</li>
+                    <li >{{assurance.price}} ,- € </li>
+                    
                   </ul> 
-                </div>
-                <div class="not-include">
-                  <ul>
-                    <li>{{assurance.absent[0]}}</li>
-                    <li>{{assurance.absent[1]}}</li>
-                    <li>{{assurance.absent[2]}}</li>
-                  </ul> 
-                </div>  
-                <div class="text-right">
-                  <span class="badge badge-primary">{{assurance.price}} €</span>
-                </div>
-              </div>
+              
+              
               <div class="card-footer">
                 <input type="checkbox" 
                        [id]="assurance.id" 
@@ -84,68 +76,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="global-content">
-    <div class="assur-content">
-        <div class="row">
-            <div class="col-lg-7">
-                <h2>Choisissez votre assurance & autres suppléments</h2>
-            </div>
-            <div class="col-lg-2">
-                <h5 class="total">TOTAL</h5>
-                <h1>207,80 €</h1>
-            </div>
-            <div class="col-lg-3">
-                <button (click)="goToNextStep()">Terminer la réservation</button>
-            </div>
-        </div>
-        <div class="title-assurance">Assurances</div>
-        <div class="packages">
-            <div class="row">
-                <div class="col-lg-3" *ngFor="let assurance of assurances" (click)="selectAssurance(assurance.id)">
-                    <h2>{{assurance.label}}</h2>
-                    <ng-container *ngIf="assurance.caution !== undefined && assurance.caution !== null && assurance.caution !== 0; else noFranchise">
-                        {{ assurance.caution }} € / Jours
-                    </ng-container>
-                    <ng-template #noFranchise>Pas de franchise</ng-template>
-                    <p class="tarif">
-                        <ng-container *ngIf="assurance.price !== undefined && assurance.price !== null && assurance.price !== 0; else noPrice">
-                            {{ assurance.price }} €
-                        </ng-container>
-                        <ng-template #noPrice>Inclus</ng-template>
-                    </p>
-
-                    <div class="list">
-                        <div class="include">
-                            <li>Protection en cas de collision</li>
-                            <li>Protection en cas de vol</li>
-                            <li>Protection en cas de vandalisme</li>
-                            <li>Protection contre les dégâts au pare-brise, vitres, projecteurs et pneus</li>
-                            <li>Protection des occupants en cas d'accident</li>
-                        </div>
-                    </div>
-                    <div class="not-include">
-                        <li>Protection des biens à l'intérieur du véhicule</li>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="title-assurance">Suppléments</div>
-        <div class="supplements">
-            <div class="row">
-                <div class="col-lg-4" *ngFor="let extra of extras">
-                    <img src="{{extra.picture}}">
-                    <h2>{{extra.label}}</h2><br />
-                    <strong>{{extra.subLabel}}</strong>
-                    <div class="texte">
-                        <p>{{extra.description}}</p>
-                    </div>
-                    <div class="prix">{{extra.price}} € / Total</div>
-                    <button (click)="toggleExtraSelection(extra.id)">
-                        {{ selectedExtras.includes(extra.id) ? 'Désélectionner' : 'Sélectionner' }}
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
