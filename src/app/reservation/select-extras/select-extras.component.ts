@@ -7,7 +7,6 @@ import {Supplement} from "../../shared/models/supplement";
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { DisableOtherCheckboxesDirective } from '../../directives/disable-other-checkboxes.directive';
-import { DisableOthersDirective } from '../../directives/disable-others.directive';
 
 @Component({
   selector: 'app-select-extras',
@@ -15,7 +14,6 @@ import { DisableOthersDirective } from '../../directives/disable-others.directiv
   imports: [
     NgForOf,
     NgIf,
-    DisableOthersDirective,
     ReactiveFormsModule,
     DisableOtherCheckboxesDirective
   ],
