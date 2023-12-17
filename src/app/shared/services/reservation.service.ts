@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import {User} from "../models/user";
 import {Reservation} from "../models/reservation";
 
@@ -35,6 +34,10 @@ export class ReservationService {
 
   getAssurances() {
     return this.http.get('http://localhost:3000/assurance');
+  }
+
+  getAssurancesById(id: string) {
+    return this.http.get('http://localhost:3000/assurance?id=' + id);
   }
 
   getVehicles() {

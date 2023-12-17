@@ -1,5 +1,4 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import { validateCardNumber as cardNumberValidator, validateExpiryDate as expiryDateValidator } from './card-checks';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { ReservationService } from '../../shared/services/reservation.service';
 import { ActivatedRoute } from '@angular/router';
@@ -53,6 +52,7 @@ export class PayementComponent implements OnInit{
 
     ngOnInit() {
         this.getTotalPrice();
+        this.getVehiculeInformations();
     }
 
 
@@ -77,7 +77,6 @@ export class PayementComponent implements OnInit{
             this.vehicleInformations = vehicule
         });
     }
-  
   }
 
   updatePayment() {

@@ -1,6 +1,5 @@
-import {OnInit, Pipe, PipeTransform} from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {ReservationService} from "../services/reservation.service";
-import {map} from "rxjs";
 import {CarType} from "../models/car-type";
 
 @Pipe({
@@ -24,8 +23,7 @@ export class CarTypePipe implements PipeTransform{
   }
     transform(id: string): string {
         let carType: string = "";
-        //const carType = this.carTypeList.find(type => type.id === id);
-        //return carType ? carType.label : 'Type inconnu';
+
         switch (id) {
             case "1":
                 carType = "Véhicule économique";
@@ -49,9 +47,7 @@ export class CarTypePipe implements PipeTransform{
                 carType = "Type inconnu";
                 break;
         }
-
         return carType;
-
     }
 
 }

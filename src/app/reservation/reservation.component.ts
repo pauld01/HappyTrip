@@ -109,7 +109,6 @@ export class ReservationComponent implements OnInit{
 
     }
 
-
     getSupplementAndAssuranceNames(){
         this.reservationService.getSupplements().subscribe(
             (supplements: any) => {
