@@ -1,3 +1,8 @@
+# Team
+
+The team is composed of : Nicolas FERREIRA, Paul DUPLESSI and Vincent CORNEE.
+We all belong to the M2- Dev Manager Fullstack.
+
 # Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
