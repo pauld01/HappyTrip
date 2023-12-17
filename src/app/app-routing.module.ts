@@ -10,11 +10,11 @@ import {HelpComponent} from "./home/help/help.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'search',
     component: HomeComponent
   },
   {
-    path: 'login',
+    path: '',
     component: LoginComponent
   },
   {

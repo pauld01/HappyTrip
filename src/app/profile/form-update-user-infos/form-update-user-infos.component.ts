@@ -55,6 +55,7 @@ export class FormUpdateUserInfosComponent implements OnInit{
       };
 
       this.authService.updateUser(updatedUser).subscribe(user => {
+        window.location.reload();
         console.log('Utilisateur mis à jour :', user);
       });
     }

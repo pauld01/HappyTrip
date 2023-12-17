@@ -43,7 +43,7 @@ export class RegisterComponent {
             this.registerForm.value.surname
         )
     );
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
   private checkPasswords(control: FormGroup) {
