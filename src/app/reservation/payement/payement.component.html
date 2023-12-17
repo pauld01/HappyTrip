@@ -6,7 +6,7 @@
       </div>
       <div class="col-lg-2">
           <h5 class="total">TOTAL</h5>
-          <h1>{{totalPrice}}</h1>
+          <h1>{{totalPrice}} €</h1>
       </div>
       <div class="col-lg-3">
           <button>Terminer la réservation</button>
@@ -163,7 +163,7 @@
           </div>
           <div class="form-group">
             <label for="expiryDate">Date d'expiration</label>
-            <input type="text" class="form-control" id="expiryDate" [(ngModel)]="expiryDate" name="expiryDate" placeholder="MM/AA" appValidateExpiry>
+            <input type="text" class="form-control" id="expiryDate" [(ngModel)]="expiryDate" name="expiryDate" placeholder="MM/AA" maxlength='5' appValidateExpiry>
             <div *ngIf="!isExpiryDateValid" class="alert alert-danger">
               ERREUR! Veuillez vérifier la date d'expiration.
             </div>
@@ -184,7 +184,7 @@
           <div class="row">
             <div class="col-lg-4">
               <p>TOTAL</p>
-              <h1>207,80 €</h1>
+              <h1>{{totalPrice}} €</h1>
             </div>
             <div class="col-lg-8">
               <button type="submit">Payer</button>
