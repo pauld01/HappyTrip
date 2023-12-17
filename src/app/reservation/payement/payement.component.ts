@@ -11,6 +11,7 @@ import { Vehicle } from '../../shared/models/vehicle';
 import { AddDatePaymentPipe } from '../../shared/pipes/add-date-payment.pipe';
 import { CardNumberValidatorDirective } from '../../shared/validators/card-number-validator';
 import { ExpiryDateDirective } from '../../shared/validators/expiry-date-validator';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-payement',
@@ -29,6 +30,8 @@ export class PayementComponent implements OnInit{
   discountApplied: boolean = false;
   paymentSuccess: boolean = false;
   submissionAttempted: boolean = false;
+  vehicleInformations!: Vehicle;
+  vehicle!: Observable<Vehicle>;
   @Input() reservation!: Reservation;
   @Input() vehicleList: Vehicle[] = [];
   @Input() assurancesList: Assurance[] = [];
@@ -64,7 +67,18 @@ export class PayementComponent implements OnInit{
     }
   }
 
+  getVehiculeInformations(){
+    if(this.reservation.vehicle != "") {
+        this.vehicle =  this.reservationService.getVehicleById(this.reservation.vehicle).pipe(
+            map((vehicle: any) => (vehicle && vehicle.length > 0) ? vehicle[0] : undefined)
+        );
   
+        this.vehicle.subscribe((vehicule: Vehicle) => {
+            this.vehicleInformations = vehicule
+        });
+    }
+  
+  }
 
   updatePayment() {
     if (this.reservation) {

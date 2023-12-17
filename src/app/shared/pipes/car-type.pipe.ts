@@ -36,6 +36,15 @@ export class CarTypePipe implements PipeTransform{
             case "3":
                 carType = "Véhicule SUV Compact";
                 break;
+            case "4":
+                carType = "Véhicule SUV";
+                break;
+            case "5":
+                carType = "Véhicule Premium";
+                break;
+            case "6":
+                carType = "Véhicule Luxe";
+                break;
             default:
                 carType = "Type inconnu";
                 break;
