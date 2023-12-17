@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { ReservationService } from '../../shared/services/reservation.service';
 import { ActivatedRoute } from '@angular/router';
 import { Reservation } from '../../shared/models/reservation';
-import {Vehicle} from "../../shared/models/vehicle";
-import {Assurance} from "../../shared/models/assurance";
-import {Supplement} from "../../shared/models/supplement";
+import { CommonModule } from '@angular/common';
+import { Supplement } from '../../shared/models/supplement';
+import { Assurance } from '../../shared/models/assurance';
+import { Vehicle } from '../../shared/models/vehicle';
+
 @Component({
   selector: 'app-payement',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './payement.component.html',
   styleUrl: './payement.component.scss'
 })
@@ -18,55 +20,58 @@ export class PayementComponent implements OnInit{
   cardNumber: string = '';
   expiryDate: string = '';
   cvv: string = '';
+  paymentSuccess: boolean = false;
+  isCardNumberValid: boolean = true;
+  isExpiryDateValid: boolean = true;
   @Input() reservation!: Reservation;
   @Input() vehicleList: Vehicle[] = [];
   @Input() assurancesList: Assurance[] = [];
   @Input() supplementsList: Supplement[] = [];
-
+  totalPrice: number = 0;
   reservationId!: string | null;
 
-  totalPrice: number = 0;
   constructor(
     private reservationService: ReservationService,
     private route: ActivatedRoute
-) {
-  this.route.paramMap.subscribe(
-      (params) => {
-        this.reservationId = params.get('idReservation');
-      }
-  );
-}
+  ) {
+    this.route.paramMap.subscribe(params => {
+      this.reservationId = params.get('idReservation');
+    });
+  }
 
+  validateCardNumber(value: string): boolean {
+    this.isCardNumberValid = cardNumberValidator(value);
+    return this.isCardNumberValid;
+  }
     ngOnInit() {
         this.getTotalPrice();
     }
-
-    validateCardNumber(value: string): boolean {
-      return cardNumberValidator(value);
-    }
-
   validateExpiryDate(value: string): boolean {
-      return expiryDateValidator(value);
+    this.isExpiryDateValid = expiryDateValidator(value);
+    return this.isExpiryDateValid;
   }
 
   submitReservation() {
-      const isCardNumberValid = this.validateCardNumber(this.cardNumber);
-      const isExpiryDateValid = this.validateExpiryDate(this.expiryDate);
-      if (isCardNumberValid && isExpiryDateValid) {
-          this.updatePayment();
-      } else {
-          console.error('Invalid card details.');
-          if (!isCardNumberValid) console.error('Invalid card number.');
-          if (!isExpiryDateValid) console.error('Invalid expiry date.');
-      }
+    this.isCardNumberValid = this.validateCardNumber(this.cardNumber);
+    this.isExpiryDateValid = this.validateExpiryDate(this.expiryDate);
+
+    if (this.isCardNumberValid && this.isExpiryDateValid) {
+      this.updatePayment();
+    } else {
+      console.error('Invalid card details.');
+      if (!this.isCardNumberValid) console.error('Invalid card number.');
+      if (!this.isExpiryDateValid) console.error('Invalid expiry date.');
+    }
   }
 
   updatePayment() {
     if (this.reservation) {
       this.reservation.payment = true;
       this.reservationService.updateReservation(this.reservation);
+      this.paymentSuccess = true;
     } else {
       console.error('Reservation object is undefined.');
+      this.paymentSuccess = false;
     }
   }
 
