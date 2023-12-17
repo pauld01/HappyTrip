@@ -1,31 +1,36 @@
-export function validateCardNumber(cardNumber: string): boolean {
-
-    const cleanedCardNumber = cardNumber.replace(/\D/g, '');
-
-    if (cleanedCardNumber.length !== 16) {
-        return false;
+export function validateCardNumber(cardNumber: string | null): boolean {
+    if (!cardNumber) {
+      return false;
     }
-
+  
+    const cleanedCardNumber = cardNumber.replace(/\D/g, '');
+  
+    if (cleanedCardNumber.length !== 16) {
+      return false;
+    }
+  
     let sum = 0;
     let shouldDouble = false;
     for (let i = cleanedCardNumber.length - 1; i >= 0; i--) {
-        let digit = parseInt(cleanedCardNumber.charAt(i));
-
-        if (shouldDouble) {
-            digit *= 2;
-            if (digit > 9) {
-                digit -= 9;
-            }
+      let digit = parseInt(cleanedCardNumber.charAt(i), 10);
+  
+      if (shouldDouble) {
+        digit *= 2;
+        if (digit > 9) {
+          digit -= 9;
         }
-
-        sum += digit;
-        shouldDouble = !shouldDouble;
+      }
+  
+      sum += digit;
+      shouldDouble = !shouldDouble;
     }
-
+  
     return sum % 10 === 0;
-}
+  }
+  
 
 export function validateExpiryDate(expiryDate: string): boolean {
+    
     const expiryDatePattern = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
 
 

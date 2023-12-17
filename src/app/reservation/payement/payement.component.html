@@ -157,19 +157,19 @@
       <div class="col-lg-7">
         <h3>Carte de débit / crédit</h3>
         <p>La carte de débit / crédit utilisée au moment de la réception du véhicule doit être au nom du conducteur principal.</p>
-        <form (ngSubmit)="submitReservation()">
+        <form #reservationForm="ngForm" (ngSubmit)="submitReservation()">
           <div class="form-group">
             <label for="cardNumber">Numéro de carte</label>
-            <input type="text" class="form-control" id="cardNumber" [(ngModel)]="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX">
-            <div *ngIf="!isCardNumberValid" class="alert alert-danger">
+            <input type="text" class="form-control" id="cardNumber" #cardNumberField="ngModel" [(ngModel)]="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" appValidateCardNumber>
+            <div *ngIf="submissionAttempted && cardNumberField.invalid" class="alert alert-danger">
               ERREUR! Veuillez vérifier les numéros de votre carte bancaire.
             </div>
           </div>
           <div class="form-group">
             <label for="expiryDate">Date d'expiration</label>
-            <input type="text" class="form-control" id="expiryDate" [(ngModel)]="expiryDate" maxlength="5" name="expiryDate" placeholder="MM/AA" appValidateExpiry>
-            <div *ngIf="!isExpiryDateValid" class="alert alert-danger">
-              ERREUR! Veuillez vérifier la date d'expiration.
+            <input type="text" class="form-control" id="expiryDate" [(ngModel)]="expiryDate" maxlength="5" name="expiryDate" placeholder="MM/AA" appValidateExpiry #expiryDateField="ngModel">
+            <div *ngIf="submissionAttempted && expiryDateField.invalid" class="alert alert-danger">
+              Date d'expiration invalide.
             </div>
           </div>
           <div class="form-group">

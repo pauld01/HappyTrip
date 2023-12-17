@@ -1,9 +1,10 @@
 import { Directive } from '@angular/core';
 import { NG_VALIDATORS, Validator, AbstractControl } from '@angular/forms';
-import { validateExpiryDate } from '../shared/validators/card-validator';
+import { validateExpiryDate } from '../../reservation/payement/card-checks';
 
 @Directive({
   selector: '[appValidateExpiry]',
+  standalone: true,
   providers: [
     {
       provide: NG_VALIDATORS,
