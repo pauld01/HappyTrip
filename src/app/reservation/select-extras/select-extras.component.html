@@ -21,20 +21,16 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">{{assurance.label}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Caution: {{assurance.caution}} €</h6>
-                
-                  <ul>
-                    <li class="include">{{assurance.include[0]}}</li>
-                    <li class="include">{{assurance.include[1]}}</li>
-                    <li class="include">{{assurance.include[2]}}</li>
-                    <li class="include">{{assurance.include[3]}}</li>
-                    <li class="include">{{assurance.include[4]}}</li>
-                    <li class="include">{{assurance.include[5]}}</li>
-                    <li >{{assurance.price}} ,- € </li>
-                    
-                  </ul> 
-              
-              
+                <h6 class="card-subtitle mb-2 text-muted">Caution: {{assurance.caution}} €</h6>       
+                <ul>
+                  <li class="include">{{assurance.include[0]}}</li>
+                  <li class="include">{{assurance.include[1]}}</li>
+                  <li class="include">{{assurance.include[2]}}</li>
+                  <li class="include">{{assurance.include[3]}}</li>
+                  <li class="include">{{assurance.include[4]}}</li>
+                  <li class="include">{{assurance.include[5]}}</li>
+                </ul> 
+                <p class="insurance-price">{{assurance.price}} ,- € </p>  
               <div class="card-footer">
                 <input type="checkbox" 
                        [id]="assurance.id" 

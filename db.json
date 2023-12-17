@@ -61,6 +61,40 @@
           "sunday": "8AM - 10 PM"
         }
       ]
+    },
+    {
+      "id": "2",
+      "city": "Berlin",
+      "country": "DE",
+      "name": "BER Berlin Brandenburg",
+      "schedules": [
+        {
+          "monday": "8AM - 10 PM",
+          "tuesday": "8AM - 10 PM",
+          "wednesday": "8AM - 10 PM",
+          "thursday": "8AM - 10 PM",
+          "friday": "8AM - 10 PM",
+          "saturday": "8AM - 10 PM",
+          "sunday": "8AM - 10 PM"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "city": "Rome",
+      "country": "IT",
+      "name": "Rome Rom-Urbe",
+      "schedules": [
+        {
+          "monday": "8AM - 10 PM",
+          "tuesday": "8AM - 10 PM",
+          "wednesday": "8AM - 10 PM",
+          "thursday": "8AM - 10 PM",
+          "friday": "8AM - 10 PM",
+          "saturday": "8AM - 10 PM",
+          "sunday": "8AM - 10 PM"
+        }
+      ]
     }
   ],
   "vehicleType": [
@@ -485,6 +519,30 @@
       "station_arrival": "1",
       "date_departure": "2023-12-21T16:36",
       "date_arrival": "2023-12-28T16:36"
+    },
+    {
+      "id": "5d8ab6ab-caa2-444f-bd0a-add48890c6d5",
+      "final_price": 520.5,
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": true,
+      "user": "fd51588f-0fcb-4294-886b-ba97a86811f3",
+      "vehicle": "5",
+      "assurance": "2",
+      "supplements": [
+        "2"
+      ],
+      "station_departure": "2",
+      "station_arrival": "2",
+      "date_departure": "2023-12-18T18:05",
+      "date_arrival": "2023-12-23T18:05"
     }
   ],
   "promotionCode": [
