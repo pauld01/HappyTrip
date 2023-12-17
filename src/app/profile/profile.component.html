@@ -53,6 +53,7 @@
                     </div>
                     <div *ngSwitchCase="2">
                         <app-form-update-user-infos [user]="currentUser"></app-form-update-user-infos>
+                        
                     </div>
                     <div *ngSwitchCase="3">
                         <div *ngIf="userReservations.length > 0; else noReservations">
@@ -70,8 +71,8 @@
                                     <p class="subtitle">{{reservation.date_arrival}}</p>
                                 </div>
                                 <div class="col-lg-6">
-                                    <h2 class="price">207,80 €</h2>
-                                    <img src="assets/golf-final.svg" width="150px">
+                                    
+                                    <img src="assets/golf-final.svg" width="150px"><h2 class="price">{{reservation.final_price || '271.50'}} €</h2>
                                 </div>
                             </div>
                         </div>

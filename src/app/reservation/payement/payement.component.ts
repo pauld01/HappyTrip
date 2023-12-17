@@ -68,6 +68,7 @@ export class PayementComponent implements OnInit{
   updatePayment() {
     if (this.reservation) {
       this.reservation.payment = true;
+      this.reservation.final_price = this.totalPrice;
       this.reservationService.updateReservation(this.reservation);
       this.paymentSuccess = true;
     } else {

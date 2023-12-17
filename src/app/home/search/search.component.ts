@@ -41,13 +41,22 @@ export class SearchComponent implements OnInit{
     );
 
     this.authService.getSavedUserInfo().subscribe(
-        (user: any) => {
-          this.currentUserId = user.id;
-        },
-        (error) => {
+      (userArray: any) => {
+          const users = userArray as any[];
+          if (users.length > 0) {
+              this.currentUserId = users[0].id;
+              console.log('Current user id :', this.currentUserId);
+          } else {
+              console.error('User data array is empty');
+          }
+      },
+      (error) => {
           console.error('Une erreur s\'est produite :', error);
-        }
-    );
+      }
+  );
+  
+  
+  
 
     this.searchForm = this.formBuilder.group({
       station_departure: new FormControl('', Validators.required),
@@ -74,6 +83,8 @@ export class SearchComponent implements OnInit{
   }
 
   createReservation() {
+    
+
     if (this.searchForm.invalid){ return; }
     const newReservation = new Reservation(
         this.currentUserId,
