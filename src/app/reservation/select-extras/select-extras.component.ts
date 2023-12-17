@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Assurance} from "../../shared/models/assurance";
 import {NgForOf, NgIf} from "@angular/common";
 import {Reservation} from "../../shared/models/reservation";
@@ -23,6 +23,8 @@ import { DisableOthersDirective } from '../../directives/disable-others.directiv
   styleUrl: './select-extras.component.scss'
 })
 export class SelectExtrasComponent {
+  @Output() changeOnglet: EventEmitter<void> = new EventEmitter<void>();
+
   @Input() assurancesList: Assurance[] = [];
   @Input() supplementsList: Supplement[] = [];
   @Input() reservation!: Reservation;
@@ -41,10 +43,10 @@ export class SelectExtrasComponent {
   );
 }
 
-
   goToNextStep() {
     this.selectAssurance();
     this.selectSupplement();
+    this.changeOnglet.emit();
   }
 
   private selectAssurance() {
