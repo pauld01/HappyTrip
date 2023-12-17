@@ -41,10 +41,6 @@
                                     <p><strong>Date de fin de validité : </strong></p>
                                     <p>11/02/2025</p>
                                 </div>
-                                <div class="rate-locations">
-                                    <p><strong>Nombre de locations : </strong></p>
-                                    <p>3/10</p>
-                                </div>
                             </div>
                             <div class="col-lg-6">
                                 <img src="assets/profil.svg">
@@ -58,22 +54,23 @@
                     <div *ngSwitchCase="3">
                         <div *ngIf="userReservations.length > 0; else noReservations">
                             <h1>Mes réservations</h1>
-                            <div class="final-row" *ngFor="let reservation of userReservations">
-                                <h2>N° de réservation : {{reservation.id}}</h2>
-                                <div class="col-lg-3">
-                                    <h2>DEPART</h2>
-                                    <h3>Paris CDG T2F</h3>
-                                    <p class="subtitle">{{reservation.date_departure}}</p>
-                                </div>
-                                <div class="col-lg-3">
-                                    <h2>RETOUR</h2>
-                                    <h3>Paris CDG T2F</h3>
-                                    <p class="subtitle">{{reservation.date_arrival}}</p>
-                                    
-                                </div>
-                                <div class="col-lg-6">
-                                    
-                                    <img src="assets/golf-final.svg" width="150px"><h2 class="price">{{reservation.final_price || '271.50'}} €</h2>
+                            <div class="final-row" *ngFor="let reservation of userReservations"> 
+                                <h2>N° de réservation : {{reservation.id}}</h2> 
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <h2>DEPART</h2>
+                                        <h3>Paris CDG T2</h3>
+                                        <p class="subtitle">{{reservation.date_departure}}</p>
+                                        <br />
+                                        <p>______________</p>
+                                        <br />
+                                        <h2>RETOUR</h2>
+                                        <h3>Paris CDG T2</h3>
+                                        <p class="subtitle">{{reservation.date_arrival}}</p>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <img src="assets/golf-final.svg"><h2 class="price">{{reservation.final_price || '271.50'}} €</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>

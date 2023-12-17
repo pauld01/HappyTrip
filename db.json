@@ -32,6 +32,16 @@
       "surname": "Paul",
       "phone": "",
       "mail": "paul.duplessi@efrei.net"
+    },
+    {
+      "id": "fd51588f-0fcb-4294-886b-ba97a86811f3",
+      "login": "vincentcornee@sfr.fr",
+      "password": "123456",
+      "name": "Cornée",
+      "surname": "Vincent",
+      "phone": "",
+      "mail": "vincentcornee@sfr.fr",
+      "birthday": ""
     }
   ],
   "station": [
@@ -75,6 +85,18 @@
     {
       "id": "3",
       "label": "Véhicule SUV Compact"
+    },
+    {
+      "id": "4",
+      "label": "Véhicule SUV"
+    },
+    {
+      "id": "5",
+      "label": "Véhicule Premium"
+    },
+    {
+      "id": "6",
+      "label": "Véhicule Luxe"
     }
   ],
   "vehicle": [
@@ -131,6 +153,60 @@
       },
       "picture": "assets/taigo.svg",
       "price": 58.95
+    },
+    {
+      "id": "4",
+      "type": "cars",
+      "carType": "4",
+      "long_name": "VW TIGUAN",
+      "brand": "VOLKSWAGEN",
+      "model": "TIGUAN",
+      "year_model": "2023",
+      "power": "150ch",
+      "characteristics": {
+        "seating_places": 5,
+        "doors": 5,
+        "gearbox": "A",
+        "bags": 4
+      },
+      "picture": "assets/tiguan.svg",
+      "price": 69.95
+    },
+    {
+      "id": "5",
+      "type": "cars",
+      "carType": "5",
+      "long_name": "AUDI A4 VARIANT",
+      "brand": "AUDI",
+      "model": "A4 VARIANT",
+      "year_model": "2023",
+      "power": "190ch",
+      "characteristics": {
+        "seating_places": 5,
+        "doors": 5,
+        "gearbox": "A",
+        "bags": 5
+      },
+      "picture": "assets/a4-avant.svg",
+      "price": 78.9
+    },
+    {
+      "id": "6",
+      "type": "cars",
+      "carType": "6",
+      "long_name": "MERCEDES E CABRIO",
+      "brand": "MERCEDES",
+      "model": "E CABRIO",
+      "year_model": "2023",
+      "power": "220ch",
+      "characteristics": {
+        "seating_places": 4,
+        "doors": 2,
+        "gearbox": "A",
+        "bags": 2
+      },
+      "picture": "assets/e-cab.svg",
+      "price": 92.95
     }
   ],
   "assurance": [
@@ -223,7 +299,7 @@
     },
     {
       "id": "3",
-      "label": "Protection premium",
+      "label": "Protection occupants & équipements",
       "subLabel": "Protégez vos passagers et le contenu du véhicule",
       "description": "Protégez vos occupants et vos équipements grâce à notre assurance. Cette dernière couvre vos occupants en cas d’accident, et vos équipements personnels en cas de vol.",
       "price": 34,
@@ -240,6 +316,8 @@
     {
       "id": "5",
       "label": "Jeune conducteur",
+      "subLabel": "Protection obligatoire pour les moins de 23 ans",
+      "description": "Assurez-vous en cas d'incident grâce à l'option jeune conducteur, et profitez de votre voyage en toute sérénité.",
       "price": 79.82,
       "picture": "assets/jeune.png"
     }
@@ -292,6 +370,121 @@
       "station_arrival": "1",
       "date_departure": "2023-12-14T21:26",
       "date_arrival": "2023-12-17T21:26"
+    },
+    {
+      "id": "328dc27f-7f9e-4064-9997-e12cc1873144",
+      "final_price": 363.33,
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": true,
+      "user": "fd51588f-0fcb-4294-886b-ba97a86811f3",
+      "vehicle": "1",
+      "assurance": "2",
+      "supplements": [
+        "2",
+        "2"
+      ],
+      "station_departure": "1",
+      "station_arrival": "1",
+      "date_departure": "2023-12-18T15:35",
+      "date_arrival": "2023-12-24T15:35"
+    },
+    {
+      "id": "3e132146-5f14-4efe-9d69-2a82719c4f43",
+      "final_price": 414.75,
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": true,
+      "user": "fd51588f-0fcb-4294-886b-ba97a86811f3",
+      "vehicle": "3",
+      "assurance": "3",
+      "supplements": [],
+      "station_departure": "1",
+      "station_arrival": "1",
+      "date_departure": "2024-01-22T15:00",
+      "date_arrival": "2024-01-26T16:00"
+    },
+    {
+      "id": "87f86766-52f2-4f8e-86dc-daca00a69a1b",
+      "final_price": 0,
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": false,
+      "user": "fd51588f-0fcb-4294-886b-ba97a86811f3",
+      "vehicle": "2",
+      "assurance": "2",
+      "supplements": [
+        "3"
+      ],
+      "station_departure": "1",
+      "station_arrival": "1",
+      "date_departure": "2024-01-22T17:00",
+      "date_arrival": "2024-01-30T18:00"
+    },
+    {
+      "id": "ae8b9810-1f99-46b1-b0ff-47612928b432",
+      "final_price": 0,
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": false,
+      "user": "fd51588f-0fcb-4294-886b-ba97a86811f3",
+      "vehicle": "1",
+      "assurance": "1",
+      "supplements": [],
+      "station_departure": "1",
+      "station_arrival": "1",
+      "date_departure": "2023-12-28T16:34",
+      "date_arrival": "2023-12-31T16:34"
+    },
+    {
+      "id": "bd0acc29-e836-46aa-b14d-165d0f090094",
+      "final_price": 0,
+      "pilot": [
+        {
+          "name": "",
+          "surname": "",
+          "birthday": "",
+          "mail": "",
+          "phone": ""
+        }
+      ],
+      "payment": false,
+      "user": "fd51588f-0fcb-4294-886b-ba97a86811f3",
+      "vehicle": "1",
+      "assurance": "1",
+      "supplements": [],
+      "station_departure": "1",
+      "station_arrival": "1",
+      "date_departure": "2023-12-21T16:36",
+      "date_arrival": "2023-12-28T16:36"
     }
   ],
   "promotionCode": [
@@ -300,8 +493,12 @@
       "validity": "2023-12-25"
     },
     {
-      "code": "BACKFRIDAY1123",
+      "code": "BLACKFRIDAY1123",
       "validity": "2023-11-30"
+    },
+    {
+      "code": "EFREI4DRIVE",
+      "validity": "2024-12-30"
     }
   ]
 }

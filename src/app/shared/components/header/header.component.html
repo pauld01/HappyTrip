@@ -1,6 +1,6 @@
 <div class="nav">
     <nav class="navbar">
-        <img routerLink="" src="assets/logo.svg" alt="logo">
+        <img routerLink="/search" src="assets/logo.svg" alt="logo">
         <div class="shortcuts">
             <a *ngIf="!isUserConnected" href="/login">Connexion</a>
             <a *ngIf="isUserConnected" (click)="logout()">Déconnexion</a>
