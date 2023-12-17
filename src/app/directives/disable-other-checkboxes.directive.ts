@@ -5,7 +5,7 @@ import { Directive, Input, ElementRef, Renderer2, OnInit } from '@angular/core';
   selector: '[appDisableOtherCheckboxes]'
 })
 export class DisableOtherCheckboxesDirective implements OnInit {
-  @Input('appDisableOtherCheckboxes') groupName!: string;  // Non-null assertion
+  @Input('appDisableOtherCheckboxes') groupName!: string;
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
@@ -19,13 +19,13 @@ export class DisableOtherCheckboxesDirective implements OnInit {
 
     this.renderer.listen(this.el.nativeElement, 'change', (event) => {
       if (event.target.checked) {
-        checkboxes.forEach((checkbox: HTMLInputElement) => {  // Specify type
+        checkboxes.forEach((checkbox: HTMLInputElement) => {
           if (checkbox !== event.target) {
             this.renderer.setProperty(checkbox, 'disabled', true);
           }
         });
       } else {
-        checkboxes.forEach((checkbox: HTMLInputElement) => {  // Specify type
+        checkboxes.forEach((checkbox: HTMLInputElement) => {
           this.renderer.setProperty(checkbox, 'disabled', false);
         });
       }
