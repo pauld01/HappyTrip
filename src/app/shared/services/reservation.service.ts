@@ -56,4 +56,8 @@ export class ReservationService {
   getCarTypeById(id: string) {
     return this.http.get('http://localhost:3000/carType?id=' + id);
   }
+
+  getPromotionCodeByCode(code: string) {
+    return this.http.get('http://localhost:3000/promotionCode?code=' + code);
+  }
 }

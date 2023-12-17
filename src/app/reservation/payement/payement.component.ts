@@ -13,7 +13,7 @@ import { AddDatePaymentPipe } from '../../shared/pipes/add-date-payment.pipe';
 @Component({
   selector: 'app-payement',
   standalone: true,
-  imports: [FormsModule,CommonModule,AddDatePaymentPipe],
+  imports: [FormsModule,CommonModule,AddDatePaymentPipe,],
   templateUrl: './payement.component.html',
   styleUrl: './payement.component.scss'
 })
@@ -21,6 +21,10 @@ export class PayementComponent implements OnInit{
   cardNumber: string = '';
   expiryDate: string = '';
   cvv: string = '';
+  discountCode: string = '';
+  originalTotalPrice: number = 0;
+  isDiscountCodeValid: boolean = true;
+  discountApplied: boolean = false;
   paymentSuccess: boolean = false;
   isCardNumberValid: boolean = true;
   isExpiryDateValid: boolean = true;
@@ -96,6 +100,42 @@ export class PayementComponent implements OnInit{
     });
     this.totalPrice = parseFloat(this.totalPrice.toFixed(2));
     console.log(this.reservation);
+  }
+
+  validateDiscountCode() {
+    if (this.discountApplied) {
+      console.warn('Discount already applied.');
+      return;
+    }
+
+    if (!this.discountCode) {
+      this.isDiscountCodeValid = true;
+      return;
+    }
+
+    this.reservationService.getPromotionCodeByCode(this.discountCode).subscribe(
+      (promotionCodeData: any) => {
+        if (promotionCodeData && promotionCodeData.length > 0) {
+          this.applyDiscount();
+          this.isDiscountCodeValid = true;
+        } else {
+          console.error('Invalid discount code.');
+          this.isDiscountCodeValid = false;
+          this.totalPrice = this.totalPrice;
+        }
+      },
+      error => {
+        console.error('Error fetching promotion code:', error);
+        this.isDiscountCodeValid = false;
+      }
+    );
+  }
+
+  applyDiscount() {
+    const discountPercentage = 10;
+    this.totalPrice = this.totalPrice * (1 - discountPercentage / 100);
+    this.totalPrice = parseFloat(this.totalPrice.toFixed(2));
+    this.discountApplied = true;
   }
   
 }
