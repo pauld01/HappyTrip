@@ -8,11 +8,12 @@ import { CommonModule } from '@angular/common';
 import { Supplement } from '../../shared/models/supplement';
 import { Assurance } from '../../shared/models/assurance';
 import { Vehicle } from '../../shared/models/vehicle';
+import { AddDatePaymentPipe } from '../../shared/pipes/add-date-payment.pipe';
 
 @Component({
   selector: 'app-payement',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,AddDatePaymentPipe],
   templateUrl: './payement.component.html',
   styleUrl: './payement.component.scss'
 })
